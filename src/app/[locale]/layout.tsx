@@ -1,5 +1,5 @@
 import clsx from "clsx"
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import localFont from "next/font/local"
 import "./globals.css"
 import Footer from "@/components/sections/Footer"
@@ -57,6 +57,12 @@ const dmSerif = localFont({
     },
   ],
 })
+
+// Color de marca para la UI del navegador. Metadata no puede leer CSS, por eso es el
+// unico valor hex fuera de globals.css (ver docs/color-system.md).
+export const viewport: Viewport = {
+  themeColor: "#f0e9d9",
+}
 
 export async function generateMetadata({
   params,
@@ -141,7 +147,7 @@ export default async function LocaleLayout({
           poppins.variable,
           meshedDisplay.variable,
           dmSerif.variable,
-          "bg-background",
+          "bg-surface-page",
           "font-poppins"
         )}
       >

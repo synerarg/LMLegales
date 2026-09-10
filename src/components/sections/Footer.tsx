@@ -4,7 +4,7 @@ import insta from "../../../public/socials/insta.png"
 import linkedin from "../../../public/socials/linkedin.svg"
 import facebook from "../../../public/socials/facebook.svg"
 
-import logo from "../../../public/logo.svg"
+import logo from "../../../public/logo-cream.svg"
 import { useTranslations, useLocale } from "next-intl"
 import Newsletter from "../inputs/Newsletter"
 
@@ -14,11 +14,11 @@ const Footer = () => {
   const locale = useLocale()
 
   return (
-    <div className="bg-footer text-white md:text-xl text-base flex flex-col gap-20 main-padding py-28 pb-12">
+    <div className="bg-surface-inverse text-fg-on-dark md:text-xl text-base flex flex-col gap-20 main-padding py-28 pb-12">
       <div className="flex md:flex-row flex-col md:gap-0 gap-16 justify-between items-start">
         <div className="flex flex-col gap-6">
           <h2 className="text-[1.75rem] font-medium">{t("services")}</h2>
-          <div className="flex flex-col gap-3 text-sm">
+          <div className="flex flex-col gap-3 text-sm text-fg-on-dark-2 [&_a:hover]:text-fg-on-dark">
             <Link
               href={"/" + (locale || "") + "/servicios/propiedad-intelectual"}
             >
@@ -44,7 +44,7 @@ const Footer = () => {
           <h2 className="text-[1.75rem] font-medium">
             Litvin Marzorati Legales
           </h2>
-          <div className="flex flex-col gap-3 text-sm">
+          <div className="flex flex-col gap-3 text-sm text-fg-on-dark-2 [&_a:hover]:text-fg-on-dark">
             <Link href={"/" + (locale || "") + "/" + "#inicio"}>
               {t("inicio")}
             </Link>
@@ -55,7 +55,7 @@ const Footer = () => {
             <Link
               href={"https://calendly.com/ip-lmlegales"}
               target="_blank"
-              className="text-[#FFBE41]"
+              className="text-fg-on-dark"
             >
               {t("reunion")}
             </Link>
@@ -74,7 +74,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="flex gap-2 items-center justify-center">
-        <span className="w-full h-px bg-[#868686]"></span>
+        <span className="w-full h-px bg-border-hairline-on-dark"></span>
         <div className="flex gap-3 invert w-80 justify-center items-center opacity-70">
           <Link href={"https://www.instagram.com/lmlegales/"} target="_blank">
             <Image
@@ -103,15 +103,14 @@ const Footer = () => {
             ></Image>
           </Link>
         </div>
-        <span className="w-full h-px bg-[#868686]"></span>
+        <span className="w-full h-px bg-border-hairline-on-dark"></span>
       </div>
       <div className="flex flex-col gap-16">
         <div className="flex md:flex-row flex-col md:gap-0 gap-16 md:items-center justify-between">
           <Image
             src={logo}
             alt="Litvin Marzorati Legales logo"
-            width={224}
-            className="invert"
+            width={200}
           ></Image>
           <div className="flex flex-col gap-3 text-sm w-72">
             <h3>Tel: +54 11 4782-9952</h3>
@@ -121,7 +120,7 @@ const Footer = () => {
             </h3>
           </div>
         </div>
-        <div className="flex items-center justify-center text-xs gap-2 text-white/50">
+        <div className="flex items-center justify-center text-xs gap-2 text-fg-on-dark-muted [&_a:hover]:text-fg-on-dark">
           <Link
             href={
               "/" +

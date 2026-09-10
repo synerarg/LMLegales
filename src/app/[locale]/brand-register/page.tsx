@@ -8,8 +8,7 @@ const BrandRegister = () => {
   const tNav = useTranslations("Nav")
   return (
     <>
-      <ToastContainer
-        toastStyle={{ backgroundColor: "#FCEFE8" }}
+      <ToastContainer
         autoClose={3000}
       />
       <Nav

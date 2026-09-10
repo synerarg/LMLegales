@@ -20,8 +20,7 @@ const Contacto = () => {
       <ContactHero />
       <MapSection />
       <ToastContainer
-        position="bottom-right"
-        toastStyle={{ backgroundColor: "#FCEFE8" }}
+        position="bottom-right"
       />
     </>
   )

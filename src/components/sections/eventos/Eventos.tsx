@@ -93,18 +93,18 @@ export default function Eventos() {
                   />
                   <main className="flex-1 flex justify-start items-start text-start flex-col space-y-3">
                     <small className="text-xs mt-3">
-                      <span className="text-accent-brown font-poppins">
+                      <span className="text-fg-secondary font-poppins">
                         Tipo de evento
                       </span>{" "}
                       / {event.date}
                     </small>
-                    <h4 className="max-w-5xl text-black font-medium text-xl">
+                    <h4 className="max-w-5xl text-fg-primary font-medium text-xl">
                       {event.name}
                     </h4>
                     <p className="max-w-5xl text-sm font-thin">
                       {event.description}
                     </p>
-                    <button className="bg-linear-to-r from-accent-brown from-[-39.43%] to-accent-orange to-162% text-black text-sm w-36 h-10 rounded-md">
+                    <button className="bg-action-bg text-action-fg hover:bg-action-bg-hover active:bg-action-bg-active motion-safe:transition-colors text-sm w-36 h-10 rounded-md">
                       Ver más
                     </button>
                   </main>

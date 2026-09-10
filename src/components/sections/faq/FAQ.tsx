@@ -33,46 +33,43 @@ export default function FAQ({ questions, subtitle, title }: FAQProps) {
     "question11",
   ] as const
 
+  const renderItem = (key: (typeof keys)[number], index: number) => (
+    <AccordionItem
+      key={key}
+      className="border border-border-hairline rounded-lg px-6 py-2 bg-surface-raised hover:border-border-control data-[state=open]:border-border-control motion-safe:transition-colors duration-200"
+      value={index.toString()}
+    >
+      <AccordionTrigger
+        className={cn(
+          "text-left hover:no-underline font-medium text-fg-secondary data-[state=open]:text-fg-primary py-4"
+        )}
+      >
+        {questions(`questions.${key}.q`)}
+      </AccordionTrigger>
+      <AccordionContent className="text-fg-secondary leading-relaxed pb-4">
+        {questions(`questions.${key}.a`)}
+      </AccordionContent>
+    </AccordionItem>
+  )
+
   return (
     <section className="max-w-4xl mx-auto px-4 py-16 space-y-8">
       <div className="text-center space-y-4">
         <h2
-          className={`sm:text-[42px] text-[2rem] font-dmSerif font-normal text-gray-900`}
+          className={`sm:text-[42px] text-[2rem] font-dmSerif font-normal text-fg-primary`}
         >
           {title}
         </h2>
-        <p className="text-gray-600 text-lg max-w-2xl mx-auto">{subtitle}</p>
+        <p className="text-fg-secondary text-lg max-w-2xl mx-auto">{subtitle}</p>
       </div>
 
       <div className="space-y-2">
         <Accordion
           type="single"
           collapsible
-          className="w-full grid grid-cols-1 lg:grid-cols-2 gap-4"
+          className="w-full max-w-3xl mx-auto flex flex-col gap-4"
         >
-          {keys.map((key, index) => (
-            <AccordionItem
-              key={key}
-              className={cn(
-                "border border-black/20 shadow-md rounded-lg px-6 py-2 bg-[#fcefe8] hover:shadow-md transition-shadow duration-200",
-                {
-                  "col-span-2": index === keys.length - 1,
-                }
-              )}
-              value={index.toString()}
-            >
-              <AccordionTrigger
-                className={cn(
-                  "text-left hover:no-underline font-medium text-gray-900 py-4"
-                )}
-              >
-                {questions(`questions.${key}.q`)}
-              </AccordionTrigger>
-              <AccordionContent className="text-gray-900 leading-relaxed pb-4">
-                {questions(`questions.${key}.a`)}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
+          {keys.map((key, index) => renderItem(key, index))}
         </Accordion>
       </div>
     </section>

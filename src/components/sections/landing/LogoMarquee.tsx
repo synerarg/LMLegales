@@ -13,8 +13,8 @@ import award9 from '../../../../public/awards/award9.png';
 const LogoMarquee = () => {
     return (
         <div className="relative flex justify-center items-center overflow-x-hidden">
-            <span className='absolute bg-linear-to-r from-transparent from-10% to-background to-60% sm:w-[40%] w-[20%] right-0 h-full z-10'></span>
-            <span className='absolute bg-linear-to-l from-transparent from-10% to-background to-60% sm:w-[40%] w-[20%] left-0 h-full z-10'></span>
+            <span className='absolute bg-linear-to-r from-transparent from-10% to-surface-page to-60% sm:w-[40%] w-[20%] right-0 h-full z-10'></span>
+            <span className='absolute bg-linear-to-l from-transparent from-10% to-surface-page to-60% sm:w-[40%] w-[20%] left-0 h-full z-10'></span>
             <div className="py-12 animate-marquee whitespace-nowrap flex">
                 <AwardLogo src={award1}></AwardLogo>
                 <AwardLogo src={award2}></AwardLogo>

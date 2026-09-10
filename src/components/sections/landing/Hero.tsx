@@ -74,12 +74,12 @@ const Hero = ({
             <Link
               href={"https://calendly.com/ip-lmlegales"}
               target="_blank"
-              className="sm:px-8 sm:py-4 px-6 py-3 rounded-md bg-linear-to-r from-accent-brown from-[-39.43%] to-accent-orange to-162% text-black"
+              className="sm:px-8 sm:py-4 px-6 py-3 rounded-md bg-action-bg text-action-fg hover:bg-action-bg-hover active:bg-action-bg-active motion-safe:transition-colors"
             >
               <p className="font-medium sm:text-md">{cta2}</p>
             </Link>
             <CtaButton
-              className="bg-none bg-[#fcefe8] border-black/20 border"
+              className="bg-transparent border border-action-ghost-border text-action-ghost-fg hover:bg-action-ghost-bg-hover active:bg-action-bg active:text-action-fg"
               url="/brand-register"
               locale={locale}
               text={cta1}

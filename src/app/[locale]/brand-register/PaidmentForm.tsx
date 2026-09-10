@@ -103,7 +103,7 @@ export default function PaidmentForm({ isOpen, setIsOpen }: PaidmentFormProps) {
   }
 
   return (
-    <Card className="w-full max-w-7xl border-none shadow-none">
+    <Card className="w-full max-w-7xl border-none shadow-none bg-transparent">
       <CardContent className="p-4 sm:p-6">
         <Collapsible
           open={isOpen}
@@ -117,7 +117,7 @@ export default function PaidmentForm({ isOpen, setIsOpen }: PaidmentFormProps) {
                 pos="01"
                 text={tBrandRegister("section1-title")}
               />
-              <Separator className="bg-black/60 mb-4 sm:mb-6" />
+              <Separator className="bg-border-strong mb-4 sm:mb-6" />
               <RadioGroup
                 defaultValue="fisica"
                 onValueChange={setPersonType}
@@ -125,7 +125,7 @@ export default function PaidmentForm({ isOpen, setIsOpen }: PaidmentFormProps) {
               >
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem
-                    className="size-4 sm:size-5 border-black/20"
+                    className="size-4 sm:size-5 border-border-control"
                     value="fisica"
                     id="fisica"
                   />
@@ -135,7 +135,7 @@ export default function PaidmentForm({ isOpen, setIsOpen }: PaidmentFormProps) {
                 </div>
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem
-                    className="size-4 sm:size-5 border-black/20"
+                    className="size-4 sm:size-5 border-border-control"
                     value="juridica"
                     id="juridica"
                   />
@@ -152,7 +152,7 @@ export default function PaidmentForm({ isOpen, setIsOpen }: PaidmentFormProps) {
                 pos="02"
                 text={tBrandRegister("section2-title")}
               />
-              <Separator className="bg-black/60" />
+              <Separator className="bg-border-strong" />
               <div className="grid gap-4">
                 {["name", "email", "phone"].map((field, index) => (
                   <div key={field} className="space-y-2">
@@ -171,7 +171,7 @@ export default function PaidmentForm({ isOpen, setIsOpen }: PaidmentFormProps) {
                       onChange={(e) =>
                         setFormData({ ...formData, [field]: e.target.value })
                       }
-                      className="w-full bg-transparent outline-hidden border-b border-black/30 focus:border-accent-orange transition-colors duration-150"
+                      className="w-full bg-transparent border-b border-border-control text-fg-primary focus-visible:border-focus-ring transition-colors duration-150"
                     />
                   </div>
                 ))}
@@ -184,7 +184,7 @@ export default function PaidmentForm({ isOpen, setIsOpen }: PaidmentFormProps) {
                 pos="03"
                 text={tBrandRegister("section3-title")}
               />
-              <Separator className="bg-black/60" />
+              <Separator className="bg-border-strong" />
               <div className="grid gap-6">
                 {[
                   ["enterprisePhone", "registration", "rent"],
@@ -217,7 +217,7 @@ export default function PaidmentForm({ isOpen, setIsOpen }: PaidmentFormProps) {
                               [field]: e.target.value,
                             })
                           }
-                          className="w-full bg-transparent outline-hidden border-b border-black/30 focus:border-accent-orange transition-colors duration-150"
+                          className="w-full bg-transparent border-b border-border-control text-fg-primary focus-visible:border-focus-ring transition-colors duration-150"
                         />
                       </div>
                     ))}
@@ -230,7 +230,7 @@ export default function PaidmentForm({ isOpen, setIsOpen }: PaidmentFormProps) {
               <div className="flex flex-row space-x-2 items-start">
                 <Checkbox
                   id="accept-terms"
-                  className="border-black/20 mt-1"
+                  className="border-border-control mt-1"
                   onCheckedChange={() => setIsChecked(!isChecked)}
                 />
                 <div className="grid gap-1.5 leading-none">
@@ -244,7 +244,7 @@ export default function PaidmentForm({ isOpen, setIsOpen }: PaidmentFormProps) {
               </div>
               <Button
                 onClick={handleNextStep}
-                className="w-full text-base px-2 py-4 sm:py-6 rounded-md bg-linear-to-r from-accent-brown from-[-39.43%] to-accent-orange to-162%"
+                className="w-full text-base px-2 py-4 sm:py-6 rounded-md"
                 type="submit"
               >
                 {tBrandRegister("button")}

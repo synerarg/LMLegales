@@ -94,7 +94,7 @@ const ContactForm = ({
         <input
           name="name"
           type="text"
-          className="bg-transparent outline-hidden border-b border-black/30"
+          className="bg-transparent border-b border-border-control text-fg-primary focus-visible:border-focus-ring"
         />
       </div>
       <div className="flex flex-col gap-2">
@@ -102,7 +102,7 @@ const ContactForm = ({
         <input
           name="email"
           type="text"
-          className="bg-transparent outline-hidden border-b border-black/30"
+          className="bg-transparent border-b border-border-control text-fg-primary focus-visible:border-focus-ring"
         />
       </div>
       <div className="flex flex-col gap-2">
@@ -110,33 +110,39 @@ const ContactForm = ({
         <input
           name="subject"
           type="text"
-          className="bg-transparent outline-hidden border-b border-black/30"
+          className="bg-transparent border-b border-border-control text-fg-primary focus-visible:border-focus-ring"
         />
       </div>
       <div className="flex flex-col gap-2">
         <InputLabel pos="04" text={message}></InputLabel>
         <textarea
           name="message"
-          className="w-full resize-none bg-transparent outline-hidden border-b border-black/30"
+          className="w-full resize-none bg-transparent border-b border-border-control text-fg-primary focus-visible:border-focus-ring"
         />
       </div>
       <div
         onClick={() => {
           setIsChecked(!isChecked)
         }}
-        className="flex gap-2 text-xs font-light text-black/70"
+        className="flex gap-2 text-xs font-light text-fg-secondary"
       >
-        <input name="check" type="checkbox" checked={isChecked} />
+        <input
+          name="check"
+          type="checkbox"
+          checked={isChecked}
+          onChange={() => {}}
+          className="accent-action-bg"
+        />
         <h3 className="cursor-default">{accept}</h3>
       </div>
       <div className="w-full flex justify-start">
         <button
           onClick={() => setIsLoading(true)}
           type="submit"
-          className={`bg-accent-orange py-3 px-7 rounded-md w-28 flex items-center justify-center`}
+          className={`bg-action-bg text-action-fg hover:bg-action-bg-hover active:bg-action-bg-active motion-safe:transition-colors py-3 px-7 rounded-md w-28 flex items-center justify-center`}
         >
           {isLoading ? (
-            <Loader2 className="w-6 h-6 text-white animate-spin" />
+            <Loader2 className="w-6 h-6 text-action-fg animate-spin" />
           ) : (
             btn
           )}

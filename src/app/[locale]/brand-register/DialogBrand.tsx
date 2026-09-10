@@ -19,11 +19,11 @@ const DialogBrand = () => {
   return (
     <Dialog open={isOpen} onOpenChange={() => setIsOpen(!isOpen)}>
       <DialogTrigger asChild>
-        <Button variant="link" className="text-base text-black underline">
+        <Button variant="link" className="text-base text-fg-primary underline">
           {tBrandRegister("popup")}
         </Button>
       </DialogTrigger>
-      <DialogContent className="bg-[#fff1f1] max-w-2xl">
+      <DialogContent className="max-w-2xl">
         <DialogHeader>
           <DialogTitle className="text-2xl font-semibold text-center mb-6">
             {tBrandRegister("popup")}
@@ -44,7 +44,7 @@ const DialogBrand = () => {
             <Button
               onClick={() => setIsOpen(false)}
               variant="default"
-              className="text-sm px-8 py-5 rounded-md bg-linear-to-r from-accent-brown from-[-39.43%] to-accent-orange to-162%"
+              className="text-sm px-8 py-5 rounded-md"
             >
               {tBrandRegister("close-btn")}
             </Button>

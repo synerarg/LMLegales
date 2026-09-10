@@ -65,9 +65,9 @@ export default function Chat() {
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 400, damping: 25 }}
             onClick={() => setOpen(true)}
-            className="group relative w-16 h-16 bg-linear-to-r from-accent-brown from-[-39.43%] to-accent-orange to-162% rounded-full shadow-xl hover:shadow-2xl transition-shadow duration-300 flex items-center justify-center"
+            className="group relative w-16 h-16 bg-action-bg hover:bg-action-bg-hover rounded-full shadow-lg motion-safe:transition-colors duration-300 flex items-center justify-center focus-visible:ring-2 focus-visible:ring-focus-ring-on-dark"
           >
-            <Bot animateOnHover size={34} className="text-white" />
+            <Bot animateOnHover size={34} className="text-action-fg" />
           </motion.button>
         ) : (
           <motion.div
@@ -76,47 +76,47 @@ export default function Chat() {
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0, opacity: 0, y: 100 }}
             transition={{ type: "spring", stiffness: 500, damping: 35 }}
-            className="w-[480px] h-[680px] chatbot_sm:w-[400px] chatbot_sm:h-[600px] chatbot_xs:w-[360px] chatbot_xs:h-[560px] bg-[#FCEFE8] rounded-3xl shadow-2xl border border-black/5 flex flex-col overflow-hidden backdrop-blur-xs"
+            className="w-[480px] h-[680px] chatbot_sm:w-[400px] chatbot_sm:h-[600px] chatbot_xs:w-[360px] chatbot_xs:h-[560px] bg-surface-page rounded-3xl shadow-lg border border-border-hairline flex flex-col overflow-hidden backdrop-blur-xs"
           >
             <motion.header
-              className="relative bg-linear-to-r from-accent-brown from-[-39.43%] to-accent-orange to-162% px-6 py-5 flex items-center justify-between"
+              className="relative bg-surface-brand text-fg-on-dark px-6 py-5 flex items-center justify-between"
               initial={{ y: -50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.05 }}
             >
               <div className="flex items-center gap-4">
-                <motion.div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-xs">
+                <motion.div className="w-10 h-10 bg-fg-on-dark/20 rounded-full flex items-center justify-center backdrop-blur-xs">
                   <Bot
                     size={24}
                     animation="blink"
                     loop
                     animate
                     loopDelay={1000}
-                    className="text-white"
+                    className="text-fg-on-dark"
                   />
                 </motion.div>
                 <div>
-                  <h4 className="text-white font-semibold text-base">
+                  <h4 className="text-fg-on-dark font-semibold text-base">
                     Asistente Virtual
                   </h4>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                    <p className="text-white/90 text-sm">En línea</p>
+                    <div className="w-2 h-2 bg-fg-on-dark-2 rounded-full animate-pulse"></div>
+                    <p className="text-fg-on-dark-2 text-sm">En línea</p>
                   </div>
                 </div>
               </div>
               <motion.button
                 onClick={() => setOpen(false)}
-                className="w-9 h-9 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors duration-200 group backdrop-blur-xs"
+                className="w-9 h-9 bg-fg-on-dark/10 hover:bg-fg-on-dark/20 rounded-full flex items-center justify-center transition-colors duration-200 group backdrop-blur-xs"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
-                <X className="w-4 h-4 text-white group-hover:rotate-90 transition-transform duration-200" />
+                <X className="w-4 h-4 text-fg-on-dark group-hover:rotate-90 transition-transform duration-200" />
               </motion.button>
             </motion.header>
 
             <main className="flex-1 overflow-hidden flex flex-col">
-              <div className="flex-1 overflow-y-auto px-6 py-6 space-y-6 scrollbar-thin scrollbar-thumb-accent-orange/30 scrollbar-track-transparent">
+              <div className="flex-1 overflow-y-auto px-6 py-6 space-y-6">
                 {messages.map((m, index) => (
                   <motion.div
                     key={m.id}
@@ -130,23 +130,23 @@ export default function Chat() {
                   >
                     <div
                       className={cn(
-                        "max-w-[80%] px-5 py-4 rounded-2xl shadow-lg relative backdrop-blur-xs",
+                        "max-w-[80%] px-5 py-4 rounded-2xl shadow-sm relative backdrop-blur-xs",
                         {
-                          "bg-[#FCEFE8] text-black rounded-br-md border border-black/10":
+                          "bg-surface-raised text-fg-primary rounded-br-md border border-border-hairline":
                             m.role === "user",
-                          "bg-[#F9AD42] text-black rounded-bl-md border border-orange-300/20":
+                          "bg-surface-sunken text-fg-primary rounded-bl-md":
                             m.role !== "user",
                         }
                       )}
                     >
                       {m.role !== "user" && (
-                        <div className="absolute -left-4 top-2 w-8 h-8 bg-linear-to-r from-accent-brown to-accent-orange rounded-full flex items-center justify-center shadow-lg border-2 border-white">
-                          <Bot className="w-4 h-4 text-white" />
+                        <div className="absolute -left-4 top-2 w-8 h-8 bg-action-bg rounded-full flex items-center justify-center shadow-sm border-2 border-surface-raised">
+                          <Bot className="w-4 h-4 text-action-fg" />
                         </div>
                       )}
                       {m.role === "user" && (
-                        <div className="absolute -right-4 top-2 w-8 h-8 bg-linear-to-r from-accent-brown to-accent-orange rounded-full flex items-center justify-center shadow-lg border-2 border-white">
-                          <User className="w-4 h-4 text-white" />
+                        <div className="absolute -right-4 top-2 w-8 h-8 bg-action-bg rounded-full flex items-center justify-center shadow-sm border-2 border-surface-raised">
+                          <User className="w-4 h-4 text-action-fg" />
                         </div>
                       )}
                       <div className="text-sm leading-relaxed font-medium">
@@ -159,7 +159,7 @@ export default function Chat() {
                       </div>
                     </div>
                     <div
-                      className={cn("text-xs text-black/50 mt-1 px-2", {
+                      className={cn("text-xs text-fg-muted mt-1 px-2", {
                         "text-right": m.role === "user",
                         "text-left": m.role !== "user",
                       })}
@@ -175,14 +175,14 @@ export default function Chat() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                   >
-                    <div className="max-w-[80%] px-5 py-4 rounded-2xl rounded-bl-md bg-[#F9AD42] text-black shadow-lg relative backdrop-blur-xs border border-orange-300/20">
-                      <div className="absolute -left-4 top-2 w-8 h-8 bg-linear-to-r from-accent-brown to-accent-orange rounded-full flex items-center justify-center shadow-lg border-2 border-white">
-                        <Loader2 className="w-4 h-4 text-white animate-spin" />
+                    <div className="max-w-[80%] px-5 py-4 rounded-2xl rounded-bl-md bg-surface-sunken text-fg-primary shadow-sm relative backdrop-blur-xs">
+                      <div className="absolute -left-4 top-2 w-8 h-8 bg-action-bg rounded-full flex items-center justify-center shadow-sm border-2 border-surface-raised">
+                        <Loader2 className="w-4 h-4 text-action-fg animate-spin" />
                       </div>
                       <div className="flex items-center gap-3 text-sm">
                         <div className="flex gap-1">
                           <motion.div
-                            className="w-2 h-2 bg-black/60 rounded-full"
+                            className="w-2 h-2 bg-fg-secondary rounded-full"
                             animate={{ y: [0, -8, 0] }}
                             transition={{
                               duration: 0.6,
@@ -191,7 +191,7 @@ export default function Chat() {
                             }}
                           />
                           <motion.div
-                            className="w-2 h-2 bg-black/60 rounded-full"
+                            className="w-2 h-2 bg-fg-secondary rounded-full"
                             animate={{ y: [0, -8, 0] }}
                             transition={{
                               duration: 0.6,
@@ -200,7 +200,7 @@ export default function Chat() {
                             }}
                           />
                           <motion.div
-                            className="w-2 h-2 bg-black/60 rounded-full"
+                            className="w-2 h-2 bg-fg-secondary rounded-full"
                             animate={{ y: [0, -8, 0] }}
                             transition={{
                               duration: 0.6,
@@ -209,12 +209,12 @@ export default function Chat() {
                             }}
                           />
                         </div>
-                        <span className="text-black/70 font-medium">
+                        <span className="text-fg-secondary font-medium">
                           {t("loader")}
                         </span>
                       </div>
                     </div>
-                    <div className="text-xs text-black/50 mt-1 px-2 text-left">
+                    <div className="text-xs text-fg-muted mt-1 px-2 text-left">
                       {getCurrentTime()}
                     </div>
                   </motion.div>
@@ -223,17 +223,17 @@ export default function Chat() {
               </div>
 
               <motion.form
-                className="p-6 border-t border-black/10 bg-[#FCEFE8]/80 backdrop-blur-xs"
+                className="p-6 border-t border-border-hairline bg-surface-page/80 backdrop-blur-xs"
                 onSubmit={handleSubmit}
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.1 }}
               >
-                <div className="relative flex items-center gap-3 bg-white rounded-2xl px-4 py-3 shadow-lg border border-black/5 focus-within:border-accent-orange/50 focus-within:shadow-xl transition-all duration-300">
+                <div className="relative flex items-center gap-3 bg-surface-raised rounded-2xl px-4 py-3 shadow-sm border border-border-control focus-within:border-focus-ring focus-within:shadow-md transition-all duration-300">
                   <input
                     value={input}
                     placeholder={t("placeholder")}
-                    className="flex-1 bg-transparent text-black text-sm outline-hidden placeholder:text-black/50 font-medium"
+                    className="flex-1 bg-transparent text-fg-primary text-sm outline-hidden placeholder:text-fg-placeholder font-medium"
                     onChange={(e) => setInput(e.target.value)}
                     disabled={status === "streaming" || status === "submitted"}
                   />
@@ -241,13 +241,13 @@ export default function Chat() {
                     type="submit"
                     disabled={status === "streaming" || !input.trim()}
                     className={cn(
-                      "w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-200 relative overflow-hidden shadow-md",
+                      "w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-200 relative overflow-hidden shadow-sm",
                       {
-                        "bg-linear-to-r from-accent-brown to-accent-orange text-white hover:shadow-lg":
+                        "bg-action-bg text-action-fg hover:bg-action-bg-hover":
                           status !== "streaming" &&
                           status !== "submitted" &&
                           input.trim(),
-                        "bg-gray-200 text-gray-400 cursor-not-allowed":
+                        "bg-disabled-bg text-disabled-fg cursor-not-allowed":
                           status === "streaming" ||
                           status === "submitted" ||
                           !input.trim(),

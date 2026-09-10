@@ -69,18 +69,18 @@ const MobileMenu = ({scrollPosition, isOpen, white, tAbout, tContacto, tInicio, 
     
 
     return (
-    <div className="w-full h-full flex flex-col gap-5 p-[0.62rem] text-base font-medium text-black">
+    <div className="w-full h-full flex flex-col gap-5 p-[0.62rem] text-base font-medium text-fg-primary">
         <Link href={'/' + (locale || '') + '/'}>{tInicio}</Link>
         <Link href={'/' + (locale || '') + '/about'}>{tAbout}</Link>
         <ListDisplay heading={tServicios} options={useLocale() === 'es' ? Services : ServicesEng}/>
         <Link href={'/' + (locale || '') + '/contacto'}>{tContacto}</Link>
-        <span className="w-full h-px bg-black/15"></span>
+        <span className="w-full h-px bg-border-hairline"></span>
         <div className="flex gap-2 items-center justify-start mr-4">
-            <Link href={pathname.replace('/en', '/es')} className={`${locale === 'es' ? 'font-semibold' : 'font-medium'}`}>ES</Link>
-            <span className={`w-px h-5 ${scrollPosition > 20 ? 'bg-black/70' : `${white ? 'bg-white/70' : 'bg-black/70'}` } `}></span>
-            <Link href={pathname.replace('/es', '/en')} className={`${locale === 'en' ? 'font-semibold' : 'font-medium'}`}>EN</Link>
+            <Link href={pathname.replace('/en', '/es')} className={`${locale === 'es' ? 'font-semibold text-fg-primary' : 'font-medium text-fg-muted'}`}>ES</Link>
+            <span className={`w-px h-5 ${scrollPosition > 20 ? 'bg-border-strong' : `${white ? 'bg-border-strong' : 'bg-border-strong'}` } `}></span>
+            <Link href={pathname.replace('/es', '/en')} className={`${locale === 'en' ? 'font-semibold text-fg-primary' : 'font-medium text-fg-muted'}`}>EN</Link>
         </div>
-        <span className="w-full h-px bg-black/15"></span>
+        <span className="w-full h-px bg-border-hairline"></span>
         <div className="flex gap-2">
         <Link href={'https://www.instagram.com/lmlegales/'} target="_blank">
             <Image src={Insta} alt="Instagram socials" className={`w-6 h-6 object-contain ${scrollPosition > 20 ? 'filter-none' : `${(white && !isOpen) && 'filter invert-100'}` }`}></Image>

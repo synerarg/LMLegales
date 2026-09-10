@@ -13,9 +13,9 @@ const ICONS: Record<"success" | "failure" | "pending", LucideIcon> = {
 }
 
 const ICON_COLORS: Record<"success" | "failure" | "pending", string> = {
-  success: "text-green-600",
-  failure: "text-red-600",
-  pending: "text-yellow-600",
+  success: "text-success",
+  failure: "text-danger",
+  pending: "text-warning",
 }
 
 type PaymentStatusCardProps = {
@@ -28,20 +28,20 @@ export default function PaymentStatusCard({ status }: PaymentStatusCardProps) {
   const Icon = ICONS[status]
 
   return (
-    <div className="min-h-screen bg-[#F5F5F3] flex items-center justify-center p-4">
-      <Card className="w-full max-w-md bg-white shadow-lg">
+    <div className="min-h-screen bg-surface-page flex items-center justify-center p-4">
+      <Card className="w-full max-w-md bg-surface-raised shadow-lg">
         <CardHeader className="text-center space-y-4 pb-2">
           <Icon className={`h-14 w-14 mx-auto ${ICON_COLORS[status]}`} />
-          <CardTitle className="font-meshedDisplay text-2xl sm:text-3xl font-bold text-black">
+          <CardTitle className="font-meshedDisplay text-2xl sm:text-3xl font-bold text-fg-primary">
             {t(`${status}.title`)}
           </CardTitle>
         </CardHeader>
         <CardContent className="text-center space-y-6 pb-6">
-          <p className="text-gray-500 text-sm sm:text-base">
+          <p className="text-fg-muted text-sm sm:text-base">
             {t(`${status}.description`)}
           </p>
           <Link href={`/${locale}`}>
-            <Button className="w-full bg-linear-to-r from-accent-brown from-[-39.43%] to-accent-orange to-162%">
+            <Button className="w-full">
               {t("back-home")}
             </Button>
           </Link>

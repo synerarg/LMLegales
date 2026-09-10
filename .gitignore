@@ -34,3 +34,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# capturas de verificacion (scripts/screenshots.mjs)
+/.screenshots/
+
+# material original entregado por el cliente (ya copiado a public/); no se versiona
+/FOTOS */

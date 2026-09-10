@@ -11,12 +11,120 @@
   --font-dmSerif: var(--font-dmSerif);
 }
 
-@theme {
-  /* Colores de marca */
-  --color-background: #fcefe8;
-  --color-accent-orange: #ffbe41;
-  --color-accent-brown: #e77d43;
-  --color-footer: #090909;
+/* =============================================================================
+   SISTEMA DE COLOR — ver docs/color-system.md
+
+   Capa 1 (primitivos `--lm-*`): definidos mas abajo en :root, FUERA de @theme.
+   Al no estar en @theme, Tailwind no genera utilidades para ellos y ningun
+   componente puede consumirlos por accidente.
+
+   Capa 2 (semanticos `--color-*`): este @theme. Es la UNICA capa que consumen
+   los componentes, via utilidades (bg-surface-page, text-fg-primary, ...).
+
+   `--color-*: initial` borra la paleta default de Tailwind: gray-500, orange-400,
+   black, white... dejan de existir. Solo hay tokens semanticos.
+   ============================================================================= */
+@theme static {
+  --color-*: initial;
+
+  /* Superficies */
+  --color-surface-page: var(--lm-cream);      /* fondo base del sitio */
+  --color-surface-raised: var(--lm-white);    /* cards, dropdowns, inputs */
+  --color-surface-sunken: var(--lm-sand);     /* bandas de descanso, burbujas */
+  --color-surface-brand: var(--lm-espresso);  /* bandas oscuras de marca */
+  --color-surface-inverse: var(--lm-ink);     /* footer, CTA final */
+
+  /* Texto sobre superficies claras */
+  --color-fg-primary: var(--lm-ink);
+  --color-fg-secondary: var(--lm-espresso);
+  --color-fg-muted: var(--lm-leather);        /* minimo permitido, nunca mas claro */
+  --color-fg-placeholder: var(--lm-leather);
+
+  /* Texto sobre superficies oscuras */
+  --color-fg-on-dark: var(--lm-cream);
+  --color-fg-on-dark-2: var(--lm-sand);
+  --color-fg-on-dark-muted: var(--lm-stone);
+  --color-fg-placeholder-on-dark: var(--lm-stone);
+
+  /* Bordes */
+  --color-border-hairline: var(--lm-sand);            /* decorativo, separadores */
+  --color-border-hairline-on-dark: var(--lm-espresso);
+  --color-border-control: var(--lm-leather);          /* inputs, checkboxes: >= 3:1 */
+  --color-border-control-on-dark: var(--lm-stone);
+  --color-border-strong: var(--lm-espresso);
+
+  /* Accion primaria */
+  --color-action-bg: var(--lm-espresso);
+  --color-action-bg-hover: var(--lm-leather);
+  --color-action-bg-active: var(--lm-ink);
+  --color-action-fg: var(--lm-cream);
+
+  /* Accion ghost (secundaria) */
+  --color-action-ghost-fg: var(--lm-espresso);
+  --color-action-ghost-border: var(--lm-leather);
+  --color-action-ghost-bg-hover: var(--lm-sand);
+
+  /* Accion invertida (sobre banda oscura) */
+  --color-action-inverse-bg: var(--lm-cream);
+  --color-action-inverse-bg-hover: var(--lm-sand);
+  --color-action-inverse-bg-active: var(--lm-white);
+  --color-action-inverse-fg: var(--lm-espresso);
+
+  /* Estado funcional: siempre color + icono + texto */
+  --color-danger: var(--lm-danger);
+  --color-danger-hover: var(--lm-danger-hover);
+  --color-success: var(--lm-success);
+  --color-warning: var(--lm-warning);
+  --color-disabled-bg: var(--lm-sand);
+  --color-disabled-fg: var(--lm-leather);
+
+  /* Foco */
+  --color-focus-ring: var(--lm-ink);
+  --color-focus-ring-on-dark: var(--lm-cream);
+
+  /* Overlays funcionales (legibilidad sobre foto, modal). Unico negro translucido permitido. */
+  --color-overlay-scrim: rgb(0 0 0 / 0.55);
+  --color-overlay-modal: rgb(0 0 0 / 0.8);
+
+  /* Seleccion de texto y scrollbar */
+  --color-selection-bg: var(--lm-sand);
+  --color-selection-fg: var(--lm-ink);
+  --color-scrollbar-track: var(--lm-cream);
+  --color-scrollbar-thumb: var(--lm-camel);
+  --color-scrollbar-thumb-hover: var(--lm-leather);
+
+  /* Marca de terceros preservada por decision del cliente: WhatsApp */
+  --color-brand-whatsapp: var(--lm-whatsapp);
+  --color-brand-whatsapp-hover: var(--lm-whatsapp-hover);
+  --color-brand-whatsapp-active: var(--lm-whatsapp-active);
+  --color-brand-whatsapp-fg: var(--lm-white);
+
+  /* Alias para los primitivos de shadcn/ui (src/components/ui/*) */
+  --color-background: var(--color-surface-page);
+  --color-foreground: var(--color-fg-primary);
+  --color-card: var(--color-surface-raised);
+  --color-card-foreground: var(--color-fg-primary);
+  --color-popover: var(--color-surface-raised);
+  --color-popover-foreground: var(--color-fg-primary);
+  --color-primary: var(--color-action-bg);
+  --color-primary-foreground: var(--color-action-fg);
+  --color-secondary: var(--color-surface-sunken);
+  --color-secondary-foreground: var(--color-fg-primary);
+  --color-muted: var(--color-surface-sunken);
+  --color-muted-foreground: var(--color-fg-muted);
+  --color-accent: var(--color-surface-sunken);
+  --color-accent-foreground: var(--color-fg-primary);
+  --color-destructive: var(--color-danger);
+  --color-destructive-foreground: var(--color-fg-on-dark);
+  --color-border: var(--color-border-hairline);
+  --color-input: var(--color-border-control);
+  --color-ring: var(--color-focus-ring);
+
+  /* Sombras: tintadas con espresso, nunca gris neutro ni negro puro */
+  --shadow-*: initial;
+  --shadow-sm: 0 1px 2px color-mix(in srgb, var(--lm-espresso) 10%, transparent);
+  --shadow-md: 0 4px 16px color-mix(in srgb, var(--lm-espresso) 12%, transparent);
+  --shadow-lg: 0 16px 48px color-mix(in srgb, var(--lm-espresso) 16%, transparent);
 
   /* Breakpoints propios (min-width) */
   --breakpoint-service: 1370px;
@@ -83,30 +191,63 @@
 /* Modo oscuro por clase, como declaraba darkMode: [_, "class"] del config anterior */
 @custom-variant dark (&:where(.dark, .dark *));
 
+@utility main-padding {
+  @apply 2xl:px-72 lg:px-32 px-3;
+}
 
 /*
-  The default border color has changed to `currentcolor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
+  Barrido de color del titulo de contacto (ColoredHeading). Unico gradiente del sitio,
+  mantenido por decision del cliente: dos colores planos de la paleta con una franja de
+  transicion, animado con --animate-moveBg. No introduce matices nuevos.
 */
+@utility text-wipe-brand {
+  background-image: var(--gradient-heading-wipe);
+  background-size: 200% 100%;
+}
+
 @layer base {
+  :root {
+    /* ---- Capa 1: primitivos. NO consumir desde componentes. ---- */
+    --lm-ink: #000000;
+    --lm-espresso: #5b483a;
+    --lm-leather: #7b5942;
+    --lm-stone: #a6a094;
+    --lm-camel: #b59d7e;
+    --lm-sand: #cabea6;
+    --lm-cream: #f0e9d9;
+    --lm-white: #ffffff;
+
+    /* Funcionales (fuera de paleta, validados sobre crema >= 6:1) */
+    --lm-danger: #9a2e1f;
+    --lm-danger-hover: #86190a;   /* OKLCH L -0.06 */
+    --lm-success: #3f5d3a;
+    --lm-warning: #6b4e12;
+
+    /* Marca de terceros preservada: verde oficial de WhatsApp + escalones OKLCH */
+    --lm-whatsapp: #25d366;
+    --lm-whatsapp-hover: #00b94d;   /* OKLCH L -0.08 */
+    --lm-whatsapp-active: #00a539;  /* OKLCH L -0.14 */
+
+    --gradient-heading-wipe: linear-gradient(
+      90deg,
+      var(--lm-leather) 0%,
+      var(--lm-leather) 42%,
+      var(--lm-ink) 58%,
+      var(--lm-ink) 100%
+    );
+
+    --radius: 0.5rem;
+  }
+
+  /* Tailwind 4 usa currentcolor como borde por defecto; el sitio usa el hairline */
   *,
   ::after,
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
+    border-color: var(--color-border-hairline);
   }
-}
 
-@utility main-padding {
-  @apply 2xl:px-72 lg:px-32 px-3;
-}
-
-@layer base {
   * {
     margin: 0;
     padding: 0;
@@ -116,63 +257,79 @@
 
   html {
     color-scheme: light !important;
-    color: black;
-  }
-}
-
-@layer utilities {
-  .button {
-    background: var(--border-color);
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    color: var(--color-fg-primary);
+    scrollbar-color: var(--color-scrollbar-thumb) var(--color-scrollbar-track);
   }
 
-  .button-body {
-    background-color: var(--button-body);
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  ::selection {
+    background-color: var(--color-selection-bg);
+    color: var(--color-selection-fg);
   }
 
+  ::placeholder {
+    color: var(--color-fg-placeholder);
+    opacity: 1;
+  }
+  :where(.bg-surface-inverse, .bg-surface-brand) ::placeholder {
+    color: var(--color-fg-placeholder-on-dark);
+  }
+
+  /*
+    Foco visible universal: outline 2px + offset. Nunca outline: none sin reemplazo.
+    El color se fija tambien en reposo para que transition-colors no lo anime desde currentcolor.
+  */
+  :where(a, button, input, select, textarea, summary, iframe, [tabindex]) {
+    outline-color: var(--color-focus-ring);
+  }
+  :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible,
+  iframe:focus {
+    outline-style: solid;
+    outline-width: 2px;
+    outline-offset: 2px;
+  }
+  :where(.bg-surface-inverse, .bg-surface-brand)
+    :where(a, button, input, select, textarea, summary, iframe, [tabindex]) {
+    outline-color: var(--color-focus-ring-on-dark);
+  }
+
+  /* Autofill de Chrome: pisa el amarillo del navegador */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px var(--color-surface-raised) inset;
+    -webkit-text-fill-color: var(--color-fg-primary);
+    caret-color: var(--color-fg-primary);
+  }
+  :where(.bg-surface-inverse, .bg-surface-brand) input:-webkit-autofill,
+  :where(.bg-surface-inverse, .bg-surface-brand) input:-webkit-autofill:hover,
+  :where(.bg-surface-inverse, .bg-surface-brand) input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px var(--color-surface-inverse) inset;
+    -webkit-text-fill-color: var(--color-fg-on-dark);
+    caret-color: var(--color-fg-on-dark);
+  }
+
+  /* Scrollbar */
   ::-webkit-scrollbar {
     width: 10px;
   }
-}
-
-@layer base {
-  :root {
-    --border-color: linear-gradient(to right, #ffbe41 0%, #e77d43 100%);
-    --button-body: #fcefe8;
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
+  ::-webkit-scrollbar-track {
+    background-color: var(--color-scrollbar-track);
   }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--color-scrollbar-thumb);
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-scrollbar-thumb-hover);
+  }
+
+  /*
+    Bloque heredado de shadcn/ui para modo oscuro. INACTIVO: nada aplica la clase .dark y
+    el html fuerza color-scheme: light. Se conserva sin cambios por decision del cliente
+    (formato HSL de shadcn v3, no conectado a la paleta). Si algun dia se implementa modo
+    oscuro, hay que definir aca el mapeo inverso completo con los primitivos --lm-*.
+  */
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -198,5 +355,16 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+  }
+
+  /* react-toastify: sus colores de estado pasan por los tokens funcionales */
+  .Toastify {
+    --toastify-color-light: var(--color-surface-raised);
+    --toastify-text-color-light: var(--color-fg-primary);
+    --toastify-color-success: var(--color-success);
+    --toastify-color-error: var(--color-danger);
+    --toastify-color-warning: var(--color-warning);
+    --toastify-color-info: var(--color-fg-secondary);
+    --toastify-color-progress-light: var(--color-action-bg);
   }
 }

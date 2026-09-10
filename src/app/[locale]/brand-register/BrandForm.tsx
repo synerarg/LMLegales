@@ -75,7 +75,7 @@ const BrandForm = ({ setIsOpen }: BrandFormProps) => {
                 onChange={(e) =>
                   setFormData({ ...formData, name: e.target.value })
                 }
-                className="w-full bg-transparent outline-hidden border-b border-black/30 focus:border-accent-orange transition-colors duration-150"
+                className="w-full bg-transparent border-b border-border-control text-fg-primary focus-visible:border-focus-ring transition-colors duration-150"
               />
             </div>
             <div className="space-y-4 sm:space-y-6">
@@ -90,7 +90,7 @@ const BrandForm = ({ setIsOpen }: BrandFormProps) => {
                 onChange={(e) =>
                   setFormData({ ...formData, type: e.target.value })
                 }
-                className="w-full bg-transparent outline-hidden border-b border-black/30 focus:border-accent-orange transition-colors duration-150"
+                className="w-full bg-transparent border-b border-border-control text-fg-primary focus-visible:border-focus-ring transition-colors duration-150"
               />
             </div>
             <div className="space-y-4 sm:space-y-6">
@@ -99,7 +99,7 @@ const BrandForm = ({ setIsOpen }: BrandFormProps) => {
                 pos="03"
                 text={tBrandRegister("label3")}
               />
-              <p className="text-sm text-black/60">
+              <p className="text-sm text-fg-secondary">
                 {tBrandRegister("chatbot-help")}
               </p>
               <CheckboxGrid
@@ -107,7 +107,7 @@ const BrandForm = ({ setIsOpen }: BrandFormProps) => {
                 setSelectedClasses={setSelectedClasses}
               />
               {numberOfClasses > 0 && (
-                <p className="text-sm text-black/60">
+                <p className="text-sm text-fg-secondary">
                   {tBrandRegister("selected-classes")}: {selectedClasses.join(", ")}
                 </p>
               )}
@@ -117,13 +117,13 @@ const BrandForm = ({ setIsOpen }: BrandFormProps) => {
         </article>
         <article className="w-full lg:w-3/4 mx-auto mt-8 lg:mt-0">
           <Card className="w-full shadow-none border-none">
-            <CardContent className="px-4 sm:px-6">
+            <CardContent className="px-4 sm:px-6 py-6">
               <div className="space-y-6">
                 <div>
                   <h3 className="text-xl font-medium mb-6">
                     {tBrandRegister("checkout-title")}
                   </h3>
-                  <Separator className="bg-black/60 mb-6" />
+                  <Separator className="bg-border-strong mb-6" />
                   <div className="space-y-4">
                     <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center">
                       <div className="space-y-1 mb-2 sm:mb-0">
@@ -173,7 +173,7 @@ const BrandForm = ({ setIsOpen }: BrandFormProps) => {
                     </div>
                   </div>
                 </div>
-                <Separator className="bg-black/60" />
+                <Separator className="bg-border-strong" />
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center pt-2">
                   <p className="text-xl font-medium mb-2 sm:mb-0">
                     {tBrandRegister("pay")}
@@ -187,7 +187,7 @@ const BrandForm = ({ setIsOpen }: BrandFormProps) => {
                 </div>
                 <Button
                   onClick={handleNextStep}
-                  className="w-full text-base px-6 py-6 rounded-md bg-linear-to-r from-accent-brown from-[-39.43%] to-accent-orange to-162%"
+                  className="w-full text-base px-6 py-6 rounded-md"
                 >
                   {tBrandRegister("button")}
                 </Button>

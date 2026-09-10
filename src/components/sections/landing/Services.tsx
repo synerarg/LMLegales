@@ -10,7 +10,7 @@ const Services = () => {
     const t = useTranslations("ServiceLand");
 
     return (
-        <div className="flex flex-col items-center justify-center gap-20 pt-20 mb-24 2xl:px-44 lg:px-28 px-5 dark:text-black">
+        <div className="flex flex-col items-center justify-center gap-20 pt-20 mb-24 2xl:px-44 lg:px-28 px-5 dark:text-fg-primary">
             <Heading title={t("title")} subtitle={t("subtitle")}></Heading>
             <div className="flex flex-wrap justify-center max-w-7xl">
                 {useLocale() === "es" ?

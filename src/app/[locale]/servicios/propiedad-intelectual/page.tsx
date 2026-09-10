@@ -19,7 +19,7 @@ export default function PropIntelectual() {
   return (
     <>
       <div className="absolute -top-16 bg-no-repeat bg-center bg-[url('/assets/propInelectualBg.png')] w-full h-[124vh] -z-50">
-        <div className="w-full absolute bottom-0 h-12 bg-linear-to-t from-background"></div>
+        <div className="w-full absolute bottom-0 h-12 bg-linear-to-t from-surface-page"></div>
       </div>
       <Nav
         white={true}

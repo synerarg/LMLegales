@@ -7,7 +7,7 @@ interface Props {
 const AwardLogo = ({src}: Props) => {
     return (
         <div className="w-40 h-24 sm:mx-8 mx-4 flex items-center justify-center">
-            <Image src={src} alt="award"></Image>
+            <Image src={src} alt="award" className="h-auto w-auto max-h-20 max-w-40"></Image>
         </div>
     );
 };

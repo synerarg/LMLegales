@@ -33,17 +33,16 @@ const CheckboxGrid = ({
         {numbers.map((number) => (
           <Label
             key={number}
-            className="flex items-center space-x-2 cursor-pointer hover:bg-black/5 p-1 rounded-sm"
+            className="flex items-center space-x-2 cursor-pointer hover:bg-surface-sunken p-1 rounded-sm"
           >
             <Checkbox
               id={`class-${number}`}
               checked={selectedClasses.includes(number)}
               onCheckedChange={(checked) =>
                 handleCheckboxChange(checked, number)
-              }
-              className="border-black/20"
+              }
             />
-            <span className="text-sm text-black/70">{number}</span>
+            <span className="text-sm text-fg-secondary">{number}</span>
           </Label>
         ))}
       </div>

@@ -82,7 +82,7 @@ export default function InstagramFeed() {
         ))}
       </div>
       <Link href="https://www.instagram.com/lmlegales/">
-        <button className="bg-linear-to-r from-accent-brown from-[-39.43%] to-accent-orange to-162% text-black text-sm w-max px-6 py-4 font-medium rounded-md">
+        <button className="bg-transparent border border-action-ghost-border text-action-ghost-fg hover:bg-action-ghost-bg-hover active:bg-action-bg active:text-action-fg motion-safe:transition-colors text-sm w-max px-6 py-4 font-medium rounded-md">
           {tInstagram("cta")}
         </button>
       </Link>

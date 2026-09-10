@@ -16,7 +16,7 @@ const CtaButton = ({
     <Link
       href={"/" + (locale || "") + url}
       className={cn(
-        "sm:px-8 sm:py-3 px-6 py-2 rounded-md bg-linear-to-r from-accent-brown from-[-39.43%] to-accent-orange to-162%",
+        "sm:px-8 sm:py-3 px-6 py-2 rounded-md bg-action-bg text-action-fg hover:bg-action-bg-hover active:bg-action-bg-active motion-safe:transition-colors",
         className
       )}
     >

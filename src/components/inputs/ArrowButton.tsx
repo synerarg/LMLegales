@@ -10,9 +10,10 @@ interface Props {
     handleClick: (dirrection: string) => void,
     clicks: number,
     maxClicks: number,
+    alwaysActive?: boolean,
 }
 
-const ArrowButton = ({left, swiperRef, handleClick, clicks, maxClicks}: Props) => {
+const ArrowButton = ({left, swiperRef, handleClick, clicks, maxClicks, alwaysActive}: Props) => {
     const handleArrowClick = () => {
         if(swiperRef.current) {
             if(!left){
@@ -26,9 +27,13 @@ const ArrowButton = ({left, swiperRef, handleClick, clicks, maxClicks}: Props) =
         }
     }
 
+    // Estado visual del control: activo si hay slides en esa direccion, inactivo si no.
+    // En carrusel circular las flechas nunca se desactivan.
+    const isActive = alwaysActive || (left ? clicks !== 0 : clicks !== (maxClicks + 1));
+
     return (
-       <button onClick={handleArrowClick} className={`w-16 h-16 flex items-center justify-center rounded-[100px] duration-100 ${!left && (clicks !== (maxClicks + 1) ? 'bg-accent-orange' : 'bg-transparent opacity-50')} ${left && (clicks !== 0 ? 'bg-accent-orange' : 'bg-transparent opacity-50')}`}>
-            <Image src={arrow} alt="arrow" width={36} className={`${left && 'rotate-180'}`}></Image>
+       <button onClick={handleArrowClick} className={`group w-16 h-16 flex items-center justify-center rounded-[100px] border duration-100 motion-safe:transition-colors ${isActive ? 'bg-surface-raised border-border-control hover:bg-action-bg active:bg-action-bg-active' : 'bg-surface-raised border-border-hairline cursor-not-allowed'}`}>
+            <Image src={arrow} alt="arrow" width={36} className={`${left && 'rotate-180'} ${isActive ? 'group-hover:invert' : 'opacity-40'}`}></Image>
        </button>
     );
 };

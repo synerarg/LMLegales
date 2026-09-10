@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "framer-motion"
 import MobileMenu from "./navigation/MobileMenu"
 
 import Logo from "../../public/logo.svg"
+import LogoCream from "../../public/logo-cream.svg"
 import Insta from "../../public/socials/insta.png"
 import Linked from "../../public/socials/linkedin.svg"
 import Facebook from "../../public/socials/facebook.svg"
@@ -41,28 +42,27 @@ const Nav = ({
   const [isHovering, setIsHovering] = useState(false)
 
   const pathname = usePathname()
+  // El nav esta sobre una foto oscura cuando la pagina lo pide (white), no se scrolleo y el menu mobile esta cerrado.
+  const onDark = !!white && scrollPosition <= 20 && !isOpen
 
   return (
     <div
       className={`w-screen h-20 fixed top-0 z-50 main-padding flex items-center justify-between duration-200 border-b ${
         scrollPosition > 20
-          ? "bg-background text-black border-transparent"
-          : `${white && "text-white"} ${
+          ? "bg-surface-page text-fg-primary border-border-hairline"
+          : `${onDark ? "text-fg-on-dark" : "text-fg-primary"} ${
               isOpen
-                ? "bg-background border-[#1E1E1E]/30"
+                ? "bg-surface-page border-border-hairline"
                 : "bg-transparent border-transparent"
             }`
       }`}
     >
       <Link href={"/" + (locale || "")}>
         <Image
-          src={Logo}
-          alt="Logo"
-          className={`w-32 ${
-            scrollPosition > 20
-              ? "filter-none"
-              : `${white && !isOpen && "filter invert-100"}`
-          }`}
+          src={onDark ? LogoCream : Logo}
+          alt="Litvin Marzorati Legales"
+          className="h-14 w-auto"
+          priority
         ></Image>
       </Link>
       {/* For Desktop */}
@@ -94,7 +94,7 @@ const Nav = ({
                 initial={{ x: -30, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: 0, opacity: 0 }}
-                className="bg-background shadow-2xl text-black flex flex-col gap-4 p-6 rounded-md absolute"
+                className="bg-surface-raised border border-border-hairline shadow-lg text-fg-primary flex flex-col gap-4 p-6 rounded-md absolute"
               >
                 <ServicesHoverCard></ServicesHoverCard>
               </motion.div>
@@ -103,8 +103,10 @@ const Nav = ({
         </div>
         <Link href={"/" + (locale || "") + "/contacto"}>
           <h3
-            className={`text-base font-medium py-1 px-3 rounded-xl ${
-              scrollPosition > 20 ? "bg-accent-orange" : "bg-transparent"
+            className={`text-base font-medium py-1 px-3 rounded-xl border border-transparent motion-safe:transition-colors ${
+              onDark
+                ? "bg-action-inverse-bg text-action-inverse-fg hover:bg-action-inverse-bg-hover active:bg-action-inverse-bg-active"
+                : "bg-action-bg text-action-fg hover:bg-action-bg-hover active:bg-action-bg-active"
             } ${!white && "duration-200"}}`}
           >
             {tContacto}
@@ -115,20 +117,20 @@ const Nav = ({
         <div className="flex gap-2 items-center justify-center mr-4">
           <Link
             href={pathname.replace("/en", "/es")}
-            className={`${locale === "es" ? "font-semibold" : "font-medium"}`}
+            className={`${locale === "es" ? `font-semibold ${onDark ? "text-fg-on-dark" : "text-fg-primary"}` : `font-medium ${onDark ? "text-fg-on-dark-2" : "text-fg-muted"}`}`}
           >
             ES
           </Link>
           <span
             className={`w-px h-5 ${
               scrollPosition > 20
-                ? "bg-black/70"
-                : `${white ? "bg-white/70" : "bg-black/70"}`
+                ? "bg-border-strong"
+                : `${white ? "bg-fg-on-dark-2" : "bg-border-strong"}`
             } `}
           ></span>
           <Link
             href={pathname.replace("/es", "/en")}
-            className={`${locale === "en" ? "font-semibold" : "font-medium"}`}
+            className={`${locale === "en" ? `font-semibold ${onDark ? "text-fg-on-dark" : "text-fg-primary"}` : `font-medium ${onDark ? "text-fg-on-dark-2" : "text-fg-muted"}`}`}
           >
             EN
           </Link>
@@ -178,35 +180,35 @@ const Nav = ({
         className="md:hidden flex flex-col justify-center items-center"
       >
         <span
-          className={`bg-black ${
+          className={`bg-fg-primary ${
             scrollPosition > 20
-              ? "bg-black"
-              : `${white && !isOpen && "bg-white"}`
+              ? "bg-fg-primary"
+              : `${white && !isOpen && "bg-fg-on-dark"}`
           } block transition-all duration-300 ease-out h-0.5 w-6 rounded-xs ${
             isOpen ? "rotate-45 translate-y-1" : "-translate-y-1"
           }`}
         ></span>
         <span
-          className={`bg-black ${
+          className={`bg-fg-primary ${
             scrollPosition > 20
-              ? "bg-black"
-              : `${white && !isOpen && "bg-white"}`
+              ? "bg-fg-primary"
+              : `${white && !isOpen && "bg-fg-on-dark"}`
           } block transition-all duration-300 ease-out h-0.5 w-6 rounded-xs ${
             isOpen ? "opacity-0" : "opacity-100"
           }`}
         ></span>
         <span
-          className={`bg-black ${
+          className={`bg-fg-primary ${
             scrollPosition > 20
-              ? "bg-black"
-              : `${white && !isOpen && "bg-white"}`
+              ? "bg-fg-primary"
+              : `${white && !isOpen && "bg-fg-on-dark"}`
           } block transition-all duration-300 ease-out h-0.5 w-6 rounded-xs ${
             isOpen ? "-rotate-45" : "translate-y-1"
           }`}
         ></span>
       </button>
       <div
-        className={`absolute md:hidden h-screen top-20 z-10 bg-background border-l border-[#1E1E1E]/30 transition-all ease-out duration-300 ${
+        className={`absolute md:hidden h-screen top-20 z-10 bg-surface-page border-l border-border-hairline transition-all ease-out duration-300 ${
           isOpen
             ? "right-0 sm:w-[50%] w-[70%]"
             : "-right-64 sm:-right-104 w-[40%]"
@@ -225,8 +227,8 @@ const Nav = ({
       </div>
       <div
         onClick={handleClick}
-        className={`absolute md:hidden h-screen w-full z-0 top-20 right-0 bg-neutral-500 duration-200 ${
-          isOpen ? "opacity-40" : "opacity-0 hidden"
+        className={`absolute md:hidden h-screen w-full z-0 top-20 right-0 bg-overlay-scrim duration-200 ${
+          isOpen ? "opacity-100" : "opacity-0 hidden"
         }`}
       ></div>
     </div>
