@@ -2,7 +2,7 @@
 
 Calculado con la formula de luminancia relativa sRGB de WCAG 2.2. Pisos aplicados: **4.5:1** texto normal, **3:1** texto >= 24px / 19px bold y componentes de interfaz (1.4.11). Los pares marcados como *exentos* son controles inactivos o logotipos, exentos por la norma y documentados en `docs/color-system.md`.
 
-**Resultado: 58 pares evaluados · 0 por debajo del piso.**
+**Resultado: 59 pares evaluados · 0 por debajo del piso.**
 
 ## Texto
 
@@ -12,7 +12,8 @@ Calculado con la formula de luminancia relativa sRGB de WCAG 2.2. Pisos aplicado
 | Subtitulos, labels de metricas, FAQ cerrado, links: fg-secondary sobre surface-page | `#5b483a` | `#f0e9d9` | 7.14:1 | 4.5 | ✅ AAA |
 | Numeracion 01-04, timestamps, texto atenuado: fg-muted sobre surface-page | `#7b5942` | `#f0e9d9` | 5.18:1 | 4.5 | ✅ AA |
 | Titulos en cards, FAQ items, cards de pago: fg-primary sobre surface-raised | `#000000` | `#ffffff` | 21.00:1 | 4.5 | ✅ AAA |
-| Aprende mas, FAQ trigger cerrado, respuesta FAQ: fg-secondary sobre surface-raised | `#5b483a` | `#ffffff` | 8.63:1 | 4.5 | ✅ AAA |
+| Aprende mas, FAQ trigger cerrado: fg-secondary sobre surface-raised | `#5b483a` | `#ffffff` | 8.63:1 | 4.5 | ✅ AAA |
+| Respuestas del FAQ: fg-muted sobre surface-raised | `#7b5942` | `#ffffff` | 6.27:1 | 4.5 | ✅ AA |
 | Labels de pago, descripciones: fg-muted sobre surface-raised | `#7b5942` | `#ffffff` | 6.27:1 | 4.5 | ✅ AA |
 | Placeholder: fg-placeholder sobre surface-raised | `#7b5942` | `#ffffff` | 6.27:1 | 4.5 | ✅ AA |
 | Burbuja del asistente: fg-primary sobre surface-sunken | `#000000` | `#cabea6` | 11.43:1 | 4.5 | ✅ AAA |
