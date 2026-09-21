@@ -86,7 +86,7 @@
   },
   "Emprendedores": {
     "title": "Entrepreneurs and New Projects",
-    "subtitle": "We focus on businesses. From simple daily consultations to large international agreements and trials."
+    "subtitle": "We support entrepreneurs and startups from the creation of the idea to the development of the business."
   },
   "Internet": {
     "title": "Legal Advice on the Internet",
@@ -177,6 +177,10 @@
         "a": "At Litvin Marzorati Legales, we stand out for our innovation and efficiency in brand protection. We use the latest technologies to offer fast and affordable registration solutions, ensuring your brand is protected effectively and without complications."
       }
     }
+  },
+  "ServicePage": {
+    "eyebrow": "The service",
+    "details": "In detail"
   },
   "brand-register": {
     "title": "Register your trademark online",

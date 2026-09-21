@@ -87,7 +87,7 @@
   },
   "Emprendedores": {
     "title": "Emprendedores y nuevos proyectos",
-    "subtitle": "Nos enfocamos en negocios. Desde simples consultas diarias hasta grandes acuerdos y juicios internacionales."
+    "subtitle": "Acompañamos a emprendedores y startups desde la creación de la idea hasta el desarrollo del negocio."
   },
   "Internet": {
     "title": "Asesoramiento legal en Internet",
@@ -178,6 +178,10 @@
         "a": "En Litvin Marzorati Legales, nos destacamos por nuestra innovación y eficiencia en la protección de marcas. Utilizamos las últimas tecnologías para ofrecer soluciones de registro rápidas y económicas, asegurando que tu marca esté protegida de manera efectiva y sin complicaciones."
       }
     }
+  },
+  "ServicePage": {
+    "eyebrow": "El servicio",
+    "details": "En detalle"
   },
   "brand-register": {
     "title": "Registra tu marca online",
