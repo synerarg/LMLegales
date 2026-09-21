@@ -40,6 +40,7 @@ export default function Home() {
         fact3={tHero("fact3")}
         cta1={tHero("cta1")}
         cta2={tHero("cta2")}
+        description={tHero("description")}
       />
       <Services />
       <LogoMarquee />
