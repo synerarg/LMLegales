@@ -52,12 +52,12 @@ export default function CheckoutSummary() {
   return (
     <div className="min-h-screen bg-surface-page flex items-center justify-center p-4">
       <div className="absolute top-3 left-3 z-10">
-        <Link href={`/${locale}/brand-register`} passHref>
-          <Button variant="default" className="shadow-md text-sm">
+        <Button asChild variant="default" size="sm">
+          <Link href={`/${locale}/brand-register`}>
             <ArrowLeft className="h-4 w-4 mr-2" />
             {tPayment("link")}
-          </Button>
-        </Link>
+          </Link>
+        </Button>
       </div>
       <Card className="w-full max-w-xl bg-surface-raised shadow-lg">
         <CardHeader className="text-center space-y-4 pb-6">
@@ -142,7 +142,7 @@ export default function CheckoutSummary() {
         </CardContent>
         <CardFooter className="p-6 bg-surface-page">
           <Button
-            className="w-full text-base px-2 py-4 sm:py-6 rounded-md"
+            className="w-full"
             onClick={handleCreatePayment}
           >
             {tPayment("confirm-purchase")}

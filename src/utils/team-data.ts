@@ -52,7 +52,7 @@ const teamData = [
     linkedIn: "https://www.linkedin.com/in/kiaraherscovich/",
   },
   {
-    name: "Federico Ilan Ostrovsky",
+    name: "Federico Ostrovsky",
     positionKey: "federico",
     image: federico,
     linkedIn: "https://www.linkedin.com/in/federico-ostrovsky-944a87300/",

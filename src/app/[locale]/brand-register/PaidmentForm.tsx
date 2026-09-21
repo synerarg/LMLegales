@@ -244,7 +244,7 @@ export default function PaidmentForm({ isOpen, setIsOpen }: PaidmentFormProps) {
               </div>
               <Button
                 onClick={handleNextStep}
-                className="w-full text-base px-2 py-4 sm:py-6 rounded-md"
+                className="w-full"
                 type="submit"
               >
                 {tBrandRegister("button")}

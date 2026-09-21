@@ -40,11 +40,9 @@ export default function PaymentStatusCard({ status }: PaymentStatusCardProps) {
           <p className="text-fg-muted text-sm sm:text-base">
             {t(`${status}.description`)}
           </p>
-          <Link href={`/${locale}`}>
-            <Button className="w-full">
-              {t("back-home")}
-            </Button>
-          </Link>
+          <Button asChild className="w-full">
+            <Link href={`/${locale}`}>{t("back-home")}</Link>
+          </Button>
         </CardContent>
       </Card>
     </div>

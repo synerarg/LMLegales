@@ -1,5 +1,5 @@
 import TeamCard from "@/components/cards/TeamCard"
-import Heading from "@/components/text/Heading"
+import SectionHeader from "@/components/text/SectionHeader"
 import { teamData } from "@/utils/team-data"
 import { useTranslations } from "next-intl"
 import { StaticImageData } from "next/image"
@@ -7,9 +7,13 @@ import { StaticImageData } from "next/image"
 const Team = () => {
   const t = useTranslations("Team")
   return (
-    <div className="my-16 flex flex-col gap-10 items-center justify-start">
-      <Heading title={t("title")} subtitle={t("subtitle")}></Heading>
-      <div className="flex flex-wrap justify-center items-center gap-5">
+    <div className="py-20 lg:py-28 flex flex-col gap-12 lg:gap-16">
+      <SectionHeader
+        eyebrow={t("eyebrow")}
+        title={t("title")}
+        subtitle={t("subtitle")}
+      />
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-5 sm:gap-x-9 gap-y-10 lg:gap-y-16">
         {teamData.map((obj, index) => (
           <TeamCard
             key={index}

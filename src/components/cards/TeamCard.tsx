@@ -9,35 +9,41 @@ interface Props {
   linkedIn: string
 }
 
+// Estructura tomada de la grilla de equipo de imk.ca: retrato vertical 4:5 sin textos encima,
+// y debajo el nombre y el cargo en un tono mas suave. Toda la tarjeta lleva al LinkedIn de la persona.
 const TeamCard = ({ name, position, image, linkedIn }: Props) => {
   return (
-    <div className="sm:w-[22.88rem] sm:h-[22.97rem] w-[20rem] h-80 text-fg-on-dark overflow-hidden relative group font-poppins cursor-pointer">
-      <div className="absolute w-full h-full bg-overlay-scrim opacity-0 group-hover:opacity-100 duration-300"></div>
-      <Image src={image} alt={name} fill className="object-cover" />
-      <div className="absolute sm:top-60 top-52 right-0 w-full">
-        <div className="relative right-3 group-hover:right-12 duration-300">
-          <h1 className="absolute whitespace-nowrap right-0 z-10 text-[1.35rem] font-medium">
-            {name}
-            <div className="absolute -inset-x-3 -inset-y-1 bg-surface-inverse -z-10 opacity-70"></div>
-          </h1>
-        </div>
-        <Link href={linkedIn} target="_blank" className="focus-visible:outline-focus-ring-on-dark">
-          <Image
-            src={linkedInIcon}
-            alt="linkedin"
-            className="absolute -right-8 group-hover:right-2 duration-300 top-2"
-          />
-        </Link>
+    <Link
+      href={linkedIn}
+      target="_blank"
+      rel="noopener noreferrer"
+      title={`${name} · LinkedIn`}
+      className="group block font-poppins focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-focus-ring"
+    >
+      <div className="relative aspect-4/5 overflow-hidden bg-surface-sunken">
+        {/* Las fotos vienen con fondos y encuadres distintos: en blanco y negro se leen como un conjunto.
+            Al pasar el mouse vuelve el color. */}
+        <Image
+          src={image}
+          alt={name}
+          fill
+          sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
+          className="object-cover object-top grayscale group-hover:grayscale-0 motion-safe:transition-[filter] duration-300"
+        />
       </div>
-      <div className="absolute sm:top-72 top-64 right-0 sm:w-[65%] w-[75%]">
-        <div className="relative -right-64 group-hover:right-3 duration-500 text-right">
-          <h2 className="absolute whitespace-normal right-0 z-10 text-base text-fg-on-dark-2">
-            {position}
-            <div className="absolute -inset-x-3 -inset-y-1 bg-surface-inverse -z-10 opacity-70"></div>
-          </h2>
-        </div>
+      {/* El icono de LinkedIn queda siempre a la vista: es la senal de que la tarjeta lleva al perfil. */}
+      <div className="mt-2 flex items-start justify-between gap-3">
+        <h3 className="text-[1.05rem] leading-snug text-fg-primary group-hover:underline underline-offset-4">
+          {name}
+        </h3>
+        <Image
+          src={linkedInIcon}
+          alt="LinkedIn"
+          className="w-5 h-5 shrink-0 mt-0.5 motion-safe:transition-transform duration-200 group-hover:scale-110"
+        />
       </div>
-    </div>
+      <p className="text-[0.95rem] leading-snug text-fg-muted">{position}</p>
+    </Link>
   )
 }
 

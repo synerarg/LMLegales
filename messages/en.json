@@ -18,7 +18,11 @@
     "fact2": "Clients",
     "fact3": "Free consultation",
     "cta1": "Register your trademark",
-    "cta2": "Book a meeting with us"
+    "cta2": "Book a meeting with us",
+    "description": "A boutique intellectual property law firm. We register, protect and defend trademarks, patents, software and copyright, in Argentina and abroad."
+  },
+  "Awards": {
+    "label": "Recognition"
   },
   "ServiceLand": {
     "title": "Our Services",
@@ -26,6 +30,7 @@
     "learn": "Learn more"
   },
   "Media": {
+    "eyebrow": "Press",
     "title": "Elevating Presence Across Media Platforms",
     "subtitle": "We are one of the most renowned Intellectual Property law firms in Latin America."
   },
@@ -57,6 +62,7 @@
     "subtitle": "We are convinced that the success of our clients will be our own success."
   },
   "Team": {
+    "eyebrow": "The firm",
     "title": "Our Team",
     "subtitle": "We specialize in intellectual property, digital law and new technologies, with headquarters in Buenos Aires and international reach.",
     "positions": {
@@ -86,7 +92,7 @@
   },
   "Emprendedores": {
     "title": "Entrepreneurs and New Projects",
-    "subtitle": "We focus on businesses. From simple daily consultations to large international agreements and trials."
+    "subtitle": "We support entrepreneurs and startups from the creation of the idea to the development of the business."
   },
   "Internet": {
     "title": "Legal Advice on the Internet",
@@ -116,60 +122,72 @@
     "formError": "Please complete the entire form."
   },
   "InstagramFeed": {
+    "eyebrow": "Instagram",
     "title": "Connect with us",
     "subtitle": "Discover our latest publications, achievements and events. Stay informed.",
     "alt": "instagram image",
     "cta": "See more posts"
   },
   "FAQ": {
-    "title": "Frequently Asked Questions",
-    "subtitle": "Find clear and direct answers to the most common queries. We are here to help you.",
+    "eyebrow": "Frequently asked questions",
+    "title": "What we always get asked",
+    "subtitle": "The questions that come up in a first consultation, answered in advance. If yours isn't here, write to us.",
+    "contactLabel": "Still have a question?",
+    "groups": {
+      "basics": "Before you register",
+      "process": "The process",
+      "after": "Once your trademark is registered"
+    },
     "questions": {
       "question1": {
         "q": "What is a trademark and why is it important to register it?",
         "a": "A trademark is a distinctive sign that allows a product or service to be differentiated from others on the market. Registering your trademark is essential because it gives you ownership and exclusive use of it, allowing you to protect your business against imitations or unauthorized uses. At Litvin Marzorati Legales, we use the latest technology in management software to make this process quick, efficient and with reduced costs, ensuring the best protection for your brand."
       },
       "question2": {
-        "q": "What rights do I have when registering a trademark?",
-        "a": "By registering your trademark, you obtain the exclusive right to use it and to defend against any unauthorized use by third parties. In addition, you can license its use, sell it in whole or in part, and exercise all necessary legal actions to protect your intellectual property. With our innovative services, we ensure quick and hassle-free registration."
-      },
-      "question3": {
-        "q": "Who can apply for trademark registration?",
-        "a": "Any natural or legal person can apply for the registration of a trademark. Additionally, certain sectors require brand registration accreditation for operations, such as the National Customs Directorate in Argentina. Our team advises you to comply with all the necessary legal requirements."
-      },
-      "question4": {
-        "q": "How long does trademark protection last?",
-        "a": "A trademark registration is valid for 10 years from the date of grant and can be renewed indefinitely in successive 10-year periods. Our automated management system will alert you when it's time to renew, so you never lose your brand protection."
-      },
-      "question5": {
-        "q": "What happens if someone tries to register a trademark similar to mine?",
-        "a": "You can oppose any application for registration of a similar or identical trademark within 30 days of its publication. We accompany you throughout the opposition process and in the defense of your rights, using advanced legal tools to ensure a favorable result."
-      },
-      "question6": {
-        "q": "Why choose Litvin Marzorati Legales to register my trademark?",
-        "a": "At Litvin Marzorati Legales, we stand out for our innovation and efficiency in brand protection. We use the latest technologies to offer fast and affordable registration solutions, ensuring your brand is protected effectively and without complications."
-      },
-      "question7": {
         "q": "What types of signs can be registered as a trademark?",
         "a": "A wide variety of signs can be registered, as long as they have distinctive capacity: words, images, logos, color combinations, among others. Our team will guide you to identify the best distinctive sign to protect your products or services effectively."
       },
-      "question8": {
-        "q": "I can protect all my products and services with a single trademark application?",
+      "question3": {
+        "q": "What rights do I have when registering a trademark?",
+        "a": "By registering your trademark, you obtain the exclusive right to use it and to defend against any unauthorized use by third parties. In addition, you can license its use, sell it in whole or in part, and exercise all necessary legal actions to protect your intellectual property. With our innovative services, we ensure quick and hassle-free registration."
+      },
+      "question4": {
+        "q": "Can I protect all my products and services with a single trademark application?",
         "a": "No, each trademark application must be directed to a specific class of goods or services according to the Nice Classification. There are 34 classes of products and 11 of services. At Litvin Marzorati Legales, we optimize your registration to make it as efficient as possible, using advanced technology that reduces costs and waiting times."
       },
-      "question9": {
+      "question5": {
+        "q": "Who can apply for trademark registration?",
+        "a": "Any natural or legal person can apply for the registration of a trademark. Additionally, certain sectors require brand registration accreditation for operations, such as the National Customs Directorate in Argentina. Our team advises you to comply with all the necessary legal requirements."
+      },
+      "question6": {
         "q": "How long does it take to get a trademark registered?",
         "a": "The registration process, in the absence of oppositions, generally takes around 18 months. However, with our efficient management and the use of cutting-edge software, we work to minimize the times and costs involved."
       },
-      "question10": {
+      "question7": {
+        "q": "How long does trademark protection last?",
+        "a": "A trademark registration is valid for 10 years from the date of grant and can be renewed indefinitely in successive 10-year periods. Our automated management system will alert you when it's time to renew, so you never lose your brand protection."
+      },
+      "question8": {
         "q": "When is it advisable to start using my brand?",
-        "a": "Es aconsejable empezar a usar la marca una vez obtenida su registro para asegurar la protección legal total. En Litvin Marzorati Legales, te ayudamos a planificar una estrategia de uso que maximice la protección de tu marca desde el primer día."
+        "a": "It is advisable to start using the trademark once its registration has been granted, to ensure full legal protection. At Litvin Marzorati Legales, we help you plan a usage strategy that maximizes your trademark's protection from day one."
+      },
+      "question9": {
+        "q": "What happens if someone tries to register a trademark similar to mine?",
+        "a": "You can oppose any application for registration of a similar or identical trademark within 30 days of its publication. We accompany you throughout the opposition process and in the defense of your rights, using advanced legal tools to ensure a favorable result."
+      },
+      "question10": {
+        "q": "Is my trademark registration valid in other countries?",
+        "a": "No, trademark registration has territorial validity. If you need international protection, we help you manage the registration in each country where you want to protect your brand."
       },
       "question11": {
-        "q": "My trademark registration is valid for other countries?",
-        "a": "No, trademark registration has territorial validity. If you need international protection, we help you manage the registration in each country where you want to protect your brand."
+        "q": "Why choose Litvin Marzorati Legales to register my trademark?",
+        "a": "At Litvin Marzorati Legales, we stand out for our innovation and efficiency in brand protection. We use the latest technologies to offer fast and affordable registration solutions, ensuring your brand is protected effectively and without complications."
       }
     }
+  },
+  "ServicePage": {
+    "eyebrow": "The service",
+    "details": "In detail"
   },
   "brand-register": {
     "title": "Register your trademark online",

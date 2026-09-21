@@ -7,13 +7,16 @@ import MobileMenu from "./navigation/MobileMenu"
 
 import Logo from "../../public/logo.svg"
 import LogoCream from "../../public/logo-cream.svg"
-import Insta from "../../public/socials/insta.png"
-import Linked from "../../public/socials/linkedin.svg"
-import Facebook from "../../public/socials/facebook.svg"
+// Iconos de las redes del header, hoy comentadas mas abajo.
+// import Insta from "../../public/socials/insta.png"
+// import Linked from "../../public/socials/linkedin.svg"
+// import Facebook from "../../public/socials/facebook.svg"
 import useScrollPosition from "@/hooks/useScrollPosition"
 import { useState } from "react"
 import ServicesHoverCard from "./navigation/ServicesHoverCard"
 import { usePathname } from "next/navigation"
+import { ChevronDown } from "lucide-react"
+import { cn } from "@/lib/utils"
 
 interface Props {
   white?: boolean
@@ -44,10 +47,13 @@ const Nav = ({
   const pathname = usePathname()
   // El nav esta sobre una foto oscura cuando la pagina lo pide (white), no se scrolleo y el menu mobile esta cerrado.
   const onDark = !!white && scrollPosition <= 20 && !isOpen
+  const linkClass = `motion-safe:transition-colors ${
+    onDark ? "hover:text-fg-on-dark-2" : "hover:text-fg-muted"
+  }`
 
   return (
     <div
-      className={`w-screen h-20 fixed top-0 z-50 main-padding flex items-center justify-between duration-200 border-b ${
+      className={`w-full h-20 fixed top-0 left-0 z-50 main-padding flex items-center justify-between duration-200 border-b ${
         scrollPosition > 20
           ? "bg-surface-page text-fg-primary border-border-hairline"
           : `${onDark ? "text-fg-on-dark" : "text-fg-primary"} ${
@@ -66,75 +72,63 @@ const Nav = ({
         ></Image>
       </Link>
       {/* For Desktop */}
-      <div className="md:flex hidden items-center gap-6">
-        <Link href={"/" + (locale || "")}>
-          <h3 className="text-base font-medium">{tInicio}</h3>
+      {/* Logo a la izquierda y todo el menu agrupado a la derecha: links en mayusculas, separador y el otro idioma. */}
+      <nav className="md:flex hidden items-center gap-7 lg:gap-10 xl:gap-14 text-sm font-semibold uppercase tracking-wide">
+        <Link href={"/" + (locale || "")} className={linkClass}>
+          {tInicio}
         </Link>
-        <Link href={"/" + (locale || "") + "/#about-us"}>
-          <h3 className="text-base font-medium whitespace-nowrap">{tAbout}</h3>
+        <Link
+          href={"/" + (locale || "") + "/#about-us"}
+          className={cn(linkClass, "whitespace-nowrap")}
+        >
+          {tAbout}
         </Link>
         <div
           onMouseOver={() => setIsHovering(true)}
           onMouseOut={() => setIsHovering(false)}
-          className="group"
+          className="group relative h-20 flex items-center"
         >
-          <div className="text-base font-medium cursor-default flex gap-2">
-            <h3>{tServicios}</h3>
-            <h3
-              className={`transition-all ${
-                !isHovering ? "rotate-0" : "rotate-90"
+          <div className="cursor-default flex items-center gap-2">
+            <span>{tServicios}</span>
+            <ChevronDown
+              aria-hidden="true"
+              strokeWidth={3}
+              className={`w-4 h-4 motion-safe:transition-transform duration-200 ${
+                !isHovering ? "rotate-0" : "rotate-180"
               }`}
-            >
-              {">"}
-            </h3>
+            />
           </div>
           <AnimatePresence>
             {isHovering && (
               <motion.div
-                initial={{ x: -30, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: 0, opacity: 0 }}
-                className="bg-surface-raised border border-border-hairline shadow-lg text-fg-primary flex flex-col gap-4 p-6 rounded-md absolute"
+                initial={{ y: -8, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: 0, opacity: 0 }}
+                className="bg-surface-raised border border-border-hairline shadow-lg text-fg-primary normal-case tracking-normal flex flex-col gap-4 p-6 rounded-md absolute top-full -left-6"
               >
                 <ServicesHoverCard></ServicesHoverCard>
               </motion.div>
             )}
           </AnimatePresence>
         </div>
-        <Link href={"/" + (locale || "") + "/contacto"}>
-          <h3
-            className={`text-base font-medium py-1 px-3 rounded-xl border border-transparent motion-safe:transition-colors ${
-              onDark
-                ? "bg-action-inverse-bg text-action-inverse-fg hover:bg-action-inverse-bg-hover active:bg-action-inverse-bg-active"
-                : "bg-action-bg text-action-fg hover:bg-action-bg-hover active:bg-action-bg-active"
-            } ${!white && "duration-200"}}`}
-          >
-            {tContacto}
-          </h3>
+        <Link href={"/" + (locale || "") + "/contacto"} className={linkClass}>
+          {tContacto}
         </Link>
-      </div>
-      <div className="md:flex hidden items-center justify-center gap-2 w-40">
-        <div className="flex gap-2 items-center justify-center mr-4">
-          <Link
-            href={pathname.replace("/en", "/es")}
-            className={`${locale === "es" ? `font-semibold ${onDark ? "text-fg-on-dark" : "text-fg-primary"}` : `font-medium ${onDark ? "text-fg-on-dark-2" : "text-fg-muted"}`}`}
-          >
-            ES
-          </Link>
-          <span
-            className={`w-px h-5 ${
-              scrollPosition > 20
-                ? "bg-border-strong"
-                : `${white ? "bg-fg-on-dark-2" : "bg-border-strong"}`
-            } `}
-          ></span>
-          <Link
-            href={pathname.replace("/es", "/en")}
-            className={`${locale === "en" ? `font-semibold ${onDark ? "text-fg-on-dark" : "text-fg-primary"}` : `font-medium ${onDark ? "text-fg-on-dark-2" : "text-fg-muted"}`}`}
-          >
-            EN
-          </Link>
-        </div>
+        <span
+          className={`w-px h-5 ${onDark ? "bg-fg-on-dark" : "bg-border-strong"}`}
+        ></span>
+        {/* Se muestra solo el idioma al que se puede cambiar. */}
+        <Link
+          href={
+            locale === "es"
+              ? pathname.replace("/es", "/en")
+              : pathname.replace("/en", "/es")
+          }
+          className={linkClass}
+        >
+          {locale === "es" ? "EN" : "ES"}
+        </Link>
+        {/* Redes sociales fuera del header (siguen en el footer y en el menu mobile).
         <Link href={"https://www.instagram.com/lmlegales/"} target="_blank">
           <Image
             src={Insta}
@@ -173,7 +167,8 @@ const Nav = ({
             }`}
           ></Image>
         </Link>
-      </div>
+        */}
+      </nav>
       {/* For mobile */}
       <button
         onClick={handleClick}

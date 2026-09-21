@@ -155,7 +155,8 @@ export default async function LocaleLayout({
 
         <NextIntlClientProvider messages={messages}>
           <TagManagerProvider>
-            <main className="flex flex-col overflow-hidden">
+            {/* overflow-x-clip y no overflow-hidden: recorta el desborde horizontal igual, pero sin anular los position: sticky de adentro (columna del FAQ). */}
+            <main className="flex flex-col overflow-x-clip">
               {children}
               <Chat />
               <Footer />

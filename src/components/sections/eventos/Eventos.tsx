@@ -6,6 +6,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
+import { Button } from "@/components/ui/button"
 
 export default function Eventos() {
   const events = [
@@ -104,9 +105,7 @@ export default function Eventos() {
                     <p className="max-w-5xl text-sm font-thin">
                       {event.description}
                     </p>
-                    <button className="bg-action-bg text-action-fg hover:bg-action-bg-hover active:bg-action-bg-active motion-safe:transition-colors text-sm w-36 h-10 rounded-md">
-                      Ver más
-                    </button>
+                    <Button className="w-fit">Ver más</Button>
                   </main>
                 </div>
               </CarouselItem>

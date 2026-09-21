@@ -3,6 +3,7 @@ import Image from "next/image";
 import arrow from "../../../public/icons/arrow-right.svg";
 import React, { MutableRefObject } from 'react';
 import SwiperType from 'swiper';
+import { useLocale } from 'next-intl';
 
 interface Props {
     left?: boolean,
@@ -11,9 +12,12 @@ interface Props {
     clicks: number,
     maxClicks: number,
     alwaysActive?: boolean,
+    small?: boolean,
 }
 
-const ArrowButton = ({left, swiperRef, handleClick, clicks, maxClicks, alwaysActive}: Props) => {
+const ArrowButton = ({left, swiperRef, handleClick, clicks, maxClicks, alwaysActive, small}: Props) => {
+    const locale = useLocale();
+
     const handleArrowClick = () => {
         if(swiperRef.current) {
             if(!left){
@@ -32,8 +36,8 @@ const ArrowButton = ({left, swiperRef, handleClick, clicks, maxClicks, alwaysAct
     const isActive = alwaysActive || (left ? clicks !== 0 : clicks !== (maxClicks + 1));
 
     return (
-       <button onClick={handleArrowClick} className={`group w-16 h-16 flex items-center justify-center rounded-[100px] border duration-100 motion-safe:transition-colors ${isActive ? 'bg-surface-raised border-border-control hover:bg-action-bg active:bg-action-bg-active' : 'bg-surface-raised border-border-hairline cursor-not-allowed'}`}>
-            <Image src={arrow} alt="arrow" width={36} className={`${left && 'rotate-180'} ${isActive ? 'group-hover:invert' : 'opacity-40'}`}></Image>
+       <button onClick={handleArrowClick} aria-label={locale === 'es' ? (left ? 'Anterior' : 'Siguiente') : (left ? 'Previous' : 'Next')} className={`group ${small ? 'w-11 h-11' : 'w-16 h-16'} flex items-center justify-center rounded-[100px] border duration-100 motion-safe:transition-colors ${isActive ? 'bg-surface-raised border-border-control hover:bg-action-bg active:bg-action-bg-active' : 'bg-surface-raised border-border-hairline cursor-not-allowed'}`}>
+            <Image src={arrow} alt="" width={small ? 22 : 36} className={`${left && 'rotate-180'} ${isActive ? 'group-hover:invert' : 'opacity-40'}`}></Image>
        </button>
     );
 };

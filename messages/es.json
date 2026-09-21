@@ -18,7 +18,11 @@
     "fact2": "Clientes",
     "fact3": "Consulta sin cargo",
     "cta1": "Registra tu marca",
-    "cta2": "Reservá una reunión"
+    "cta2": "Reservá una reunión",
+    "description": "Estudio boutique de propiedad intelectual. Registramos, protegemos y defendemos marcas, patentes, software y derechos de autor, en Argentina y en el exterior."
+  },
+  "Awards": {
+    "label": "Reconocimientos"
   },
   "ServiceLand": {
     "title": "Nuestros Servicios",
@@ -26,6 +30,7 @@
     "learn": "Aprende más"
   },
   "Media": {
+    "eyebrow": "Prensa",
     "title": "Trascendiendo en los medios",
     "subtitle": "Somos uno de los más reconocidos estudios de servicios de Propiedad Intelectual en América Latina."
   },
@@ -54,11 +59,11 @@
     "disclaimer": "Descargo de responsabilidad"
   },
   "AboutCards": {
-
     "title": "Nuestro equipo",
     "subtitle": "Forjamos un camino conjunto hacia metas compartidas, donde cada integrante juega un papel esencial."
   },
   "Team": {
+    "eyebrow": "El estudio",
     "title": "Un estudio jurídico boutique con visión global",
     "subtitle": "Nos especializamos en propiedad intelectual, derecho digital y nuevas tecnologías, con sede en Buenos Aires y alcance internacional.",
     "positions": {
@@ -88,7 +93,7 @@
   },
   "Emprendedores": {
     "title": "Emprendedores y nuevos proyectos",
-    "subtitle": "Nos enfocamos en negocios. Desde simples consultas diarias hasta grandes acuerdos y juicios internacionales."
+    "subtitle": "Acompañamos a emprendedores y startups desde la creación de la idea hasta el desarrollo del negocio."
   },
   "Internet": {
     "title": "Asesoramiento legal en Internet",
@@ -118,14 +123,22 @@
     "formError": "Complete el formulario entero."
   },
   "InstagramFeed": {
+    "eyebrow": "Instagram",
     "title": "Conectate con nosotros",
     "subtitle": "Mantenete al tanto de las últimas novedades y noticias de nuestro estudio.",
     "alt": "imagen de instagram",
     "cta": "Ver mas publicaciones"
   },
   "FAQ": {
-    "title": "Preguntas Frecuentes",
-    "subtitle": "Respondemos a las preguntas más comunes sobre el registro de marcas y la protección de la propiedad intelectual.",
+    "eyebrow": "Preguntas frecuentes",
+    "title": "Lo que nos preguntan siempre",
+    "subtitle": "Las dudas que aparecen en la primera consulta, respondidas de antemano. Si la tuya no está, escribinos.",
+    "contactLabel": "¿Te quedó algo sin responder?",
+    "groups": {
+      "basics": "Antes de registrar",
+      "process": "El trámite",
+      "after": "Con la marca registrada"
+    },
     "questions": {
       "question1": {
         "q": "¿Qué es una marca y por qué es importante registrarla?",
@@ -172,6 +185,10 @@
         "a": "En Litvin Marzorati Legales, nos destacamos por nuestra innovación y eficiencia en la protección de marcas. Utilizamos las últimas tecnologías para ofrecer soluciones de registro rápidas y económicas, asegurando que tu marca esté protegida de manera efectiva y sin complicaciones."
       }
     }
+  },
+  "ServicePage": {
+    "eyebrow": "El servicio",
+    "details": "En detalle"
   },
   "brand-register": {
     "title": "Registra tu marca online",
