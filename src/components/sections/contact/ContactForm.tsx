@@ -4,6 +4,7 @@ import React, { useState } from "react"
 import { toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 import InputLabel from "./InputLabel"
+import { buttonVariants } from "@/components/ui/button"
 import { Loader2 } from "lucide-react"
 import { ContactSchema } from "@/lib/validations/Forms"
 import { BodyEmail } from "@/types"
@@ -139,7 +140,8 @@ const ContactForm = ({
         <button
           onClick={() => setIsLoading(true)}
           type="submit"
-          className={`bg-action-bg text-action-fg hover:bg-action-bg-hover active:bg-action-bg-active motion-safe:transition-colors py-3 px-7 rounded-md w-28 flex items-center justify-center`}
+          // min-w para que el boton no se achique cuando el texto se cambia por el loader.
+          className={buttonVariants({ className: "min-w-28" })}
         >
           {isLoading ? (
             <Loader2 className="w-6 h-6 text-action-fg animate-spin" />

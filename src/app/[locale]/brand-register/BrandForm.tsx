@@ -187,7 +187,7 @@ const BrandForm = ({ setIsOpen }: BrandFormProps) => {
                 </div>
                 <Button
                   onClick={handleNextStep}
-                  className="w-full text-base px-6 py-6 rounded-md"
+                  className="w-full"
                 >
                   {tBrandRegister("button")}
                 </Button>

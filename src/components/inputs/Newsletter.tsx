@@ -3,6 +3,7 @@
 import { NewsletterSchema } from "@/lib/validations/Forms"
 import axios from "axios"
 import { useState } from "react"
+import { buttonVariants } from "@/components/ui/button"
 
 import "react-toastify/dist/ReactToastify.css"
 import { z } from "zod"
@@ -80,7 +81,7 @@ const Newsletter = ({ label, accept, submit }: Props) => {
       <div className="w-full flex justify-start">
         <button
           type="submit"
-          className={`bg-action-inverse-bg text-action-inverse-fg hover:bg-action-inverse-bg-hover active:bg-action-inverse-bg-active motion-safe:transition-colors py-2 px-4 rounded-md w-20 text-sm`}
+          className={buttonVariants({ variant: "inverse", size: "sm" })}
         >
           {submit}
         </button>

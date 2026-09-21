@@ -1,4 +1,6 @@
 import { cn } from "@/lib/utils"
+import { buttonVariants } from "@/components/ui/button"
+import type { VariantProps } from "class-variance-authority"
 import Link from "next/link"
 
 const CtaButton = ({
@@ -6,21 +8,20 @@ const CtaButton = ({
   locale,
   url,
   className,
+  variant,
 }: {
   text?: string
   locale: string
   url: string
   className?: string
+  variant?: VariantProps<typeof buttonVariants>["variant"]
 }) => {
   return (
     <Link
       href={"/" + (locale || "") + url}
-      className={cn(
-        "sm:px-8 sm:py-3 px-6 py-2 rounded-md bg-action-bg text-action-fg hover:bg-action-bg-hover active:bg-action-bg-active motion-safe:transition-colors",
-        className
-      )}
+      className={cn(buttonVariants({ variant }), className)}
     >
-      <h3 className="font-medium sm:text-lg sm:text-md">{text || "Nada"}</h3>
+      <h3>{text || "Nada"}</h3>
     </Link>
   )
 }
