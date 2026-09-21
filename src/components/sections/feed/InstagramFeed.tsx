@@ -4,6 +4,8 @@ import Link from "next/link"
 import Image from "next/image"
 import axios from "axios"
 import { Skeleton } from "@/components/ui/skeleton"
+import SectionHeader from "@/components/text/SectionHeader"
+import { ArrowRight } from "lucide-react"
 import { useQuery } from "@tanstack/react-query"
 import { useTranslations } from "next-intl"
 import { useEffect } from "react"
@@ -54,38 +56,48 @@ export default function InstagramFeed() {
   ]
 
   return (
-    <section className="max-w-3xl mx-auto px-4 py-16 text-center space-y-6">
-      <h2 className="sm:text-[42px] text-[2rem] font-dmSerif font-normal">
-        {tInstagram("title")}
-      </h2>
-      <p className="text-center max-w-2xl mx-auto min_feed:text-xs">
-        {tInstagram("subtitle")}
-      </p>
-      <div className="grid grid-cols-3 place-items-center gap-y-8 gap-x-24 feed:gap-x-12 feed:grid-cols-2 min_feed:grid-cols-1">
+    <section className="main-padding py-20 lg:py-28 space-y-10 lg:space-y-14">
+      {/* Encabezado a la izquierda y el link al perfil a la derecha, en vez del boton centrado. */}
+      <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+        <SectionHeader
+          eyebrow={tInstagram("eyebrow")}
+          title={tInstagram("title")}
+          subtitle={tInstagram("subtitle")}
+        />
+        <Link
+          href="https://www.instagram.com/lmlegales/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group inline-flex items-center gap-2 w-fit text-base font-medium text-fg-primary border-b border-border-control pb-1 hover:border-fg-primary motion-safe:transition-colors"
+        >
+          {tInstagram("cta")}
+          <ArrowRight
+            aria-hidden="true"
+            strokeWidth={1.5}
+            className="h-5 w-5 motion-safe:transition-transform duration-200 group-hover:translate-x-1"
+          />
+        </Link>
+      </div>
+      {/* Tira compacta: 6 en una fila en desktop, 3 en tablet, 2 en celular. */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
         {feed.map((post, index) => (
           <Link
             href={"https://www.instagram.com/lmlegales/"}
             key={index}
             target="_blank"
+            className="block overflow-hidden rounded-md"
           >
-            <div className="size-64 rounded-md">
-              <Image
-                src={post.image_url as string}
-                alt={tInstagram("alt")}
-                width={400}
-                height={400}
-                unoptimized
-                className="w-full h-auto rounded-md aspect-[256px]"
-              />
-            </div>
+            <Image
+              src={post.image_url as string}
+              alt={tInstagram("alt")}
+              width={400}
+              height={400}
+              unoptimized
+              className="w-full aspect-square object-cover motion-safe:transition-transform duration-300 hover:scale-105"
+            />
           </Link>
         ))}
       </div>
-      <Link href="https://www.instagram.com/lmlegales/">
-        <button className="bg-transparent border border-action-ghost-border text-action-ghost-fg hover:bg-action-ghost-bg-hover active:bg-action-bg active:text-action-fg motion-safe:transition-colors text-sm w-max px-6 py-4 font-medium rounded-md">
-          {tInstagram("cta")}
-        </button>
-      </Link>
     </section>
   )
 }
