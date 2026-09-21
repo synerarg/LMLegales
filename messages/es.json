@@ -21,6 +21,9 @@
     "cta2": "Reservá una reunión",
     "description": "Estudio boutique de propiedad intelectual. Registramos, protegemos y defendemos marcas, patentes, software y derechos de autor, en Argentina y en el exterior."
   },
+  "Awards": {
+    "label": "Reconocimientos"
+  },
   "ServiceLand": {
     "title": "Nuestros Servicios",
     "subtitle": "Analizamos riesgos, estructuramos portafolios, prevenimos conflictos y diseñamos estrategias legales alineadas con los objetivos comerciales de cada cliente.",

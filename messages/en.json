@@ -21,6 +21,9 @@
     "cta2": "Book a meeting with us",
     "description": "A boutique intellectual property law firm. We register, protect and defend trademarks, patents, software and copyright, in Argentina and abroad."
   },
+  "Awards": {
+    "label": "Recognition"
+  },
   "ServiceLand": {
     "title": "Our Services",
     "subtitle": "We analyze risks, structure portfolios, prevent conflicts, and design legal strategies aligned with the commercial goals of each client.",

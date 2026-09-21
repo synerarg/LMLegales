@@ -4,7 +4,7 @@ import FAQ from "@/components/sections/faq/FAQ"
 import InstagramFeed from "@/components/sections/feed/InstagramFeed"
 import FinalCTA from "@/components/sections/landing/FinalCTA"
 import Hero from "@/components/sections/landing/Hero"
-import LogoMarquee from "@/components/sections/landing/LogoMarquee"
+import AwardsStrip from "@/components/sections/landing/AwardsStrip"
 import Media from "@/components/sections/landing/Media"
 import Services from "@/components/sections/landing/Services"
 import { useLocale, useTranslations } from "next-intl"
@@ -42,8 +42,9 @@ export default function Home() {
         cta2={tHero("cta2")}
         description={tHero("description")}
       />
+      {/* Premios en version quieta. Para volver al desfile: <LogoMarquee /> */}
+      <AwardsStrip />
       <Services />
-      <LogoMarquee />
       <AboutSection />
       <Media
         header={{ title: tMedia("title"), subtitle: tMedia("subtitle") }}
