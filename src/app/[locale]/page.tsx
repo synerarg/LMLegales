@@ -47,7 +47,11 @@ export default function Home() {
       <Services />
       <AboutSection />
       <Media
-        header={{ title: tMedia("title"), subtitle: tMedia("subtitle") }}
+        header={{
+          eyebrow: tMedia("eyebrow"),
+          title: tMedia("title"),
+          subtitle: tMedia("subtitle"),
+        }}
       />
       {/* <Eventos /> */}
 
