@@ -191,8 +191,22 @@
 /* Modo oscuro por clase, como declaraba darkMode: [_, "class"] del config anterior */
 @custom-variant dark (&:where(.dark, .dark *));
 
+/*
+  Margen lateral de todo el sitio. Antes era 12px / 128px (lg) / 288px (2xl): al pasar los 1536px el margen
+  saltaba tanto que el contenido quedaba MAS angosto en una pantalla de 1600 que en una de 1440.
+  Ahora el contenido crece parejo hasta un tope de 84rem (1344px, lo que ya media en 1920) y a partir de
+  ahi el margen absorbe el resto. En 1920 queda igual que antes; entre 1024 y 1900 gana ancho.
+*/
 @utility main-padding {
-  @apply 2xl:px-72 lg:px-32 px-3;
+  padding-inline: 0.75rem;
+
+  @media (width >= 64rem) {
+    padding-inline: max(4rem, calc((100vw - 84rem) / 2));
+  }
+
+  @media (width >= 80rem) {
+    padding-inline: max(5rem, calc((100vw - 84rem) / 2));
+  }
 }
 
 /*
