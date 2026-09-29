@@ -86,6 +86,12 @@ const Footer = () => {
                 {t("contact")}
               </Link>
               <Link
+                href={"/" + (locale || "") + "/consulta-disponibilidad"}
+                className="text-fg-on-dark"
+              >
+                {t("availability")}
+              </Link>
+              <Link
                 href={"https://calendly.com/ip-lmlegales"}
                 target="_blank"
                 className="text-fg-on-dark"
