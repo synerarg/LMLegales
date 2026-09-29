@@ -18,7 +18,7 @@
     "fact2": "Clientes",
     "fact3": "Consulta sin cargo",
     "cta1": "Registra tu marca",
-    "cta2": "Reservá una reunión",
+    "cta2": "Consultá disponibilidad gratis",
     "description": "Estudio boutique de propiedad intelectual. Registramos, protegemos y defendemos marcas, patentes, software y derechos de autor, en Argentina y en el exterior."
   },
   "Awards": {
@@ -56,7 +56,8 @@
     "aviso": "Aviso Legal",
     "privacy": "Política de Privacidad",
     "condiciones": "Condiciones de uso",
-    "disclaimer": "Descargo de responsabilidad"
+    "disclaimer": "Descargo de responsabilidad",
+    "availability": "Consultar disponibilidad"
   },
   "AboutCards": {
     "title": "Nuestro equipo",
@@ -278,6 +279,71 @@
     "pending": {
       "title": "Pago pendiente",
       "description": "Tu pago está siendo procesado. Te notificaremos por email en cuanto se confirme."
+    }
+  },
+  "Availability": {
+    "eyebrow": "Consulta gratuita",
+    "step": "Pregunta {current} de {total}",
+    "accept": "Aceptar",
+    "back": "Anterior",
+    "send": "Enviar",
+    "sending": "Enviando",
+    "pressEnter": "pulse Enter ↵",
+    "pressCtrlEnter": "pulse Ctrl + Enter ↵",
+    "multiHint": "Elija tantas opciones como desee",
+    "placeholder": "Escriba aquí su respuesta...",
+    "required": "Este campo es obligatorio.",
+    "invalidEmail": "Ingrese un mail válido.",
+    "invalidPhone": "Ingrese un número válido.",
+    "sendError": "No pudimos enviar su consulta. Intente de nuevo en unos minutos.",
+    "brand": {
+      "title": "Ingrese el nombre de su marca",
+      "placeholder": "Nombre de la marca",
+      "cta": "Verificar disponibilidad"
+    },
+    "offer": {
+      "title": "¿Qué ofrece actualmente a sus clientes?",
+      "help": "Puede elegir si su actividad principal es la venta de productos, la prestación de servicios o ambas.",
+      "a": "Productos",
+      "b": "Servicios",
+      "c": "Ambos"
+    },
+    "description": {
+      "title": "Describa los productos o servicios que ofrecerá con la marca",
+      "help1": "Ejemplos: venta de indumentaria, servicios de estética, fabricación de muebles, restaurante, desarrollo de software.",
+      "help2": "Esta información es vital para chequear las clases."
+    },
+    "stage": {
+      "title": "¿En qué etapa se encuentra?",
+      "a": "Solo quiero saber si la marca está disponible.",
+      "b": "Quiero registrar mi marca."
+    },
+    "holder": {
+      "title": "¿Tipo de titular?",
+      "a": "Persona física",
+      "b": "Persona Jurídica"
+    },
+    "countries": {
+      "title": "¿En qué país o países desea registrar la marca?",
+      "a": "Argentina",
+      "b": "Argentina y exterior"
+    },
+    "name": {
+      "title": "Nombre y apellido de contacto"
+    },
+    "email": {
+      "title": "Por favor ingrese su mail",
+      "placeholder": "nombre@ejemplo.com"
+    },
+    "whatsapp": {
+      "title": "Indíquenos su WhatsApp para enviarle el informe de factibilidad legal.",
+      "placeholder": "11 2345 6789",
+      "country": "Código de país"
+    },
+    "done": {
+      "title": "¡Búsqueda de factibilidad en proceso!",
+      "text": "Recibimos su consulta. Nuestro equipo va a analizar la marca y se va a contactar con usted en breve.",
+      "cta": "Volver al inicio"
     }
   }
 }

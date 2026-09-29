@@ -2,8 +2,9 @@
 
 import HeroFact from "@/components/cards/HeroFact"
 import CtaButton from "@/components/inputs/Button"
-import { buttonVariants } from "@/components/ui/button"
-import Link from "next/link"
+// Para volver al boton de Calendly (comentado mas abajo) hay que reponer estos imports:
+// import { buttonVariants } from "@/components/ui/button"
+// import Link from "next/link"
 import { TypeAnimation } from "react-type-animation"
 
 interface Props {
@@ -83,6 +84,7 @@ const Hero = ({
           </p>
           <div className="mt-9 sm:mt-10 w-full h-max flex sm:flex-row flex-col justify-start items-start gap-5">
             {/* <MeetingButton locale={locale} text={cta2} /> */}
+            {/* Antes: reunion por Calendly. Se reemplazo por la consulta gratuita de disponibilidad.
             <Link
               href={"https://calendly.com/ip-lmlegales"}
               target="_blank"
@@ -90,6 +92,12 @@ const Hero = ({
             >
               <p>{cta2}</p>
             </Link>
+            */}
+            <CtaButton
+              url="/consulta-disponibilidad"
+              locale={locale}
+              text={cta2}
+            />
             <CtaButton
               variant="outline"
               url="/brand-register"

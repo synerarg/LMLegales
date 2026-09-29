@@ -18,7 +18,7 @@
     "fact2": "Clients",
     "fact3": "Free consultation",
     "cta1": "Register your trademark",
-    "cta2": "Book a meeting with us",
+    "cta2": "Check availability for free",
     "description": "A boutique intellectual property law firm. We register, protect and defend trademarks, patents, software and copyright, in Argentina and abroad."
   },
   "Awards": {
@@ -55,7 +55,8 @@
     "submit": "Submit",
     "privacy": "Privacy Policy",
     "condiciones": "Terms of Use",
-    "disclaimer": "Legal Disclaimer"
+    "disclaimer": "Legal Disclaimer",
+    "availability": "Check availability"
   },
   "AboutCards": {
     "title": "About Us",
@@ -277,6 +278,71 @@
     "pending": {
       "title": "Payment pending",
       "description": "Your payment is being processed. We'll email you as soon as it's confirmed."
+    }
+  },
+  "Availability": {
+    "eyebrow": "Free consultation",
+    "step": "Question {current} of {total}",
+    "accept": "OK",
+    "back": "Back",
+    "send": "Submit",
+    "sending": "Sending",
+    "pressEnter": "press Enter ↵",
+    "pressCtrlEnter": "press Ctrl + Enter ↵",
+    "multiHint": "Choose as many as you like",
+    "placeholder": "Type your answer here...",
+    "required": "This field is required.",
+    "invalidEmail": "Enter a valid email.",
+    "invalidPhone": "Enter a valid number.",
+    "sendError": "We couldn't send your request. Please try again in a few minutes.",
+    "brand": {
+      "title": "Enter your brand name",
+      "placeholder": "Brand name",
+      "cta": "Check availability"
+    },
+    "offer": {
+      "title": "What do you currently offer your customers?",
+      "help": "Choose whether your main activity is selling products, providing services, or both.",
+      "a": "Products",
+      "b": "Services",
+      "c": "Both"
+    },
+    "description": {
+      "title": "Describe the products or services you will offer under the brand",
+      "help1": "Examples: clothing sales, beauty services, furniture manufacturing, restaurant, software development.",
+      "help2": "This information is essential to check the classes."
+    },
+    "stage": {
+      "title": "What stage are you at?",
+      "a": "I just want to know if the brand is available.",
+      "b": "I want to register my brand."
+    },
+    "holder": {
+      "title": "Type of owner?",
+      "a": "Individual",
+      "b": "Legal entity"
+    },
+    "countries": {
+      "title": "In which country or countries do you want to register the brand?",
+      "a": "Argentina",
+      "b": "Argentina and abroad"
+    },
+    "name": {
+      "title": "Contact full name"
+    },
+    "email": {
+      "title": "Please enter your email",
+      "placeholder": "name@example.com"
+    },
+    "whatsapp": {
+      "title": "Give us your WhatsApp number so we can send you the legal feasibility report.",
+      "placeholder": "11 2345 6789",
+      "country": "Country code"
+    },
+    "done": {
+      "title": "Feasibility search in progress!",
+      "text": "We received your request. Our team will review the brand and get in touch with you shortly.",
+      "cta": "Back to home"
     }
   }
 }

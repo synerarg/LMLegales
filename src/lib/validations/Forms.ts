@@ -51,3 +51,26 @@ export const ContactSchema = z.object({
 export const NewsletterSchema = z.object({
   email: z.string().email(),
 })
+
+// Consulta de disponibilidad de marca (/consulta-disponibilidad). Las opciones viajan como claves
+// fijas y el mail las traduce a texto, asi nadie puede mandar respuestas inventadas.
+export const AvailabilitySchema = z.object({
+  brand: z.string().trim().min(1).max(120),
+  offer: z.enum(["products", "services", "both"]),
+  description: z.string().trim().min(2).max(2000),
+  stage: z.enum(["check", "register"]),
+  holder: z.enum(["individual", "company"]),
+  countries: z.array(z.enum(["argentina", "abroad"])).min(1),
+  name: z.string().trim().min(2).max(120),
+  email: z.string().trim().email(),
+  whatsapp: z
+    .string()
+    .trim()
+    .regex(/^\+\d{1,4} [\d\s-]{6,20}$/),
+  locale: z.string().optional(),
+  // Trampa para bots: campo invisible que una persona nunca completa. No se rechaza aca porque el
+  // autocompletado del navegador a veces lo llena; la ruta decide que hacer (ver api/availability).
+  website: z.string().max(500).optional(),
+})
+
+export type AvailabilityValues = z.infer<typeof AvailabilitySchema>
