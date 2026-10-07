@@ -2,7 +2,7 @@
 
 Calculado con la formula de luminancia relativa sRGB de WCAG 2.2. Pisos aplicados: **4.5:1** texto normal, **3:1** texto >= 24px / 19px bold y componentes de interfaz (1.4.11). Los pares marcados como *exentos* son controles inactivos o logotipos, exentos por la norma y documentados en `docs/color-system.md`.
 
-**Resultado: 59 pares evaluados · 0 por debajo del piso.**
+**Resultado: 63 pares evaluados · 0 por debajo del piso.**
 
 ## Texto
 
@@ -59,6 +59,10 @@ Calculado con la formula de luminancia relativa sRGB de WCAG 2.2. Pisos aplicado
 | Boton invertido hover: action-inverse-fg sobre action-inverse-bg-hover | `#5b483a` | `#cabea6` | 4.70:1 | 4.5 | ✅ AA |
 | Boton invertido active: action-inverse-fg sobre action-inverse-bg-active | `#5b483a` | `#ffffff` | 8.63:1 | 4.5 | ✅ AAA |
 | Boton invertido vs banda: action-inverse-bg sobre surface-inverse | `#f0e9d9` | `#000000` | 17.36:1 | 3.0 | ✅ AAA |
+| Boton flotante del chatbot: icono action-inverse-fg sobre action-inverse-bg | `#5b483a` | `#f0e9d9` | 7.14:1 | 3.0 | ✅ AAA |
+| Boton flotante del chatbot hover: icono action-inverse-fg sobre action-inverse-bg-hover | `#5b483a` | `#cabea6` | 4.70:1 | 3.0 | ✅ AA |
+| Boton flotante del chatbot vs pagina: borde border-strong sobre surface-page | `#5b483a` | `#f0e9d9` | 7.14:1 | 3.0 | ✅ AAA |
+| Boton flotante del chatbot vs footer: action-inverse-bg sobre surface-inverse | `#f0e9d9` | `#000000` | 17.36:1 | 3.0 | ✅ AAA |
 | Disabled: disabled-fg sobre disabled-bg | `#7b5942` | `#cabea6` | 3.41:1 | exento | n/a · controles inactivos: exentos por WCAG 1.4.3 y 1.4.11 |
 | Boton destructivo: fg-on-dark sobre danger | `#f0e9d9` | `#9a2e1f` | 6.24:1 | 4.5 | ✅ AA |
 | Boton destructivo hover: fg-on-dark sobre danger-hover | `#f0e9d9` | `#86190a` | 8.05:1 | 4.5 | ✅ AAA |
