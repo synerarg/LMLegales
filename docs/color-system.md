@@ -127,7 +127,7 @@ Sobre la foto del CTA final (compuesta sobre crema, zona del texto): ink 16.03:1
 Sobre espresso: white 8.63 · cream 7.14 · sand 4.70 · camel y stone 3.32 (solo UI).
 Sobre blanco: espresso 8.63 · leather 6.27 · camel y stone 2.60 (nunca texto).
 
-Pisos: 4.5:1 texto normal, 3:1 texto ≥ 24 px o ≥ 19 px bold, 3:1 componentes de interfaz. La tabla completa con los 57 pares reales del sitio está en `contrast-report.md`; ninguno queda por debajo del piso salvo los exentos por norma (controles inactivos, logotipos).
+Pisos: 4.5:1 texto normal, 3:1 texto ≥ 24 px o ≥ 19 px bold, 3:1 componentes de interfaz. La tabla completa con los 63 pares reales del sitio está en `contrast-report.md`; ninguno queda por debajo del piso salvo los exentos por norma (controles inactivos, logotipos).
 
 ## 5. Reglas de uso
 
@@ -173,6 +173,7 @@ Pisos: 4.5:1 texto normal, 3:1 texto ≥ 24 px o ≥ 19 px bold, 3:1 componentes
 | Nav "Contacto" | Primero fue ghost segun el brief; el 2026-09-08 el cliente pidio que sea siempre lleno. Sobre crema: `action-bg` con texto `action-fg`. Sobre las fotos de servicios: relleno invertido (`action-inverse-*`, crema con texto espresso) para que no se funda con la foto oscura. Convive con el primario del hero en el primer viewport por decision del cliente. | Hecho |
 | FAQ abierto | Item en `surface-raised` con borde `border-control`, pregunta en `fg-primary` y respuesta en `fg-muted` (cuero, 6.27:1 sobre blanco) para separar visualmente titulo y texto; pedido del cliente del 2026-09-14. | Hecho |
 | Burbuja del asistente | Arena con texto ink. | Hecho |
+| Boton flotante del chatbot | Pedido de la clienta (7/10/2026): que no se pierda y se vea "en positivo". Pasa de espresso pleno a relleno crema (`action-inverse-bg`) con icono espresso (`action-inverse-fg`) y borde de 2 px `border-strong`. El espresso pleno sobre el footer negro daba 2.43:1 y se perdia; el crema se lee sobre negro y sobre las fotos oscuras, y el borde lo separa del crema de la pagina. El header y los avatares dentro del chat siguen en espresso. | Hecho |
 
 ## 7. Excepciones al "cero literales fuera de globals.css"
 

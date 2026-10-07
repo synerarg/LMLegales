@@ -65,9 +65,11 @@ export default function Chat() {
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 400, damping: 25 }}
             onClick={() => setOpen(true)}
-            className="group relative w-16 h-16 bg-action-bg hover:bg-action-bg-hover rounded-full shadow-lg motion-safe:transition-colors duration-300 flex items-center justify-center focus-visible:ring-2 focus-visible:ring-focus-ring-on-dark"
+            // En positivo: relleno crema e icono espresso. Un espresso pleno se perdia sobre el footer y las
+            // fotos oscuras; el borde espresso lo mantiene visible tambien sobre el crema de la pagina.
+            className="group relative w-16 h-16 bg-action-inverse-bg hover:bg-action-inverse-bg-hover active:bg-action-inverse-bg-active border-2 border-border-strong rounded-full shadow-lg motion-safe:transition-colors duration-300 flex items-center justify-center focus-visible:ring-2 focus-visible:ring-focus-ring-on-dark"
           >
-            <Bot animateOnHover size={34} className="text-action-fg" />
+            <Bot animateOnHover size={34} className="text-action-inverse-fg" />
           </motion.button>
         ) : (
           <motion.div
