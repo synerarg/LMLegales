@@ -5,8 +5,8 @@ import { AnimatePresence, motion } from "framer-motion"
 
 import MobileMenu from "./navigation/MobileMenu"
 
-import Logo from "../../public/logo.svg"
-import LogoCream from "../../public/logo-cream.svg"
+import Logo from "../../public/logo-new.png"
+import LogoCream from "../../public/logo-new-cream.png"
 // Iconos de las redes del header, hoy comentadas mas abajo.
 // import Insta from "../../public/socials/insta.png"
 // import Linked from "../../public/socials/linkedin.svg"
@@ -67,7 +67,7 @@ const Nav = ({
         <Image
           src={onDark ? LogoCream : Logo}
           alt="Litvin Marzorati Legales"
-          className="h-14 w-auto"
+          className="h-14 w-[92.88px] object-contain"
           priority
         ></Image>
       </Link>
