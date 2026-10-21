@@ -4,7 +4,7 @@ import insta from "../../../public/socials/insta.png"
 import linkedin from "../../../public/socials/linkedin.svg"
 import facebook from "../../../public/socials/facebook.svg"
 
-import logo from "../../../public/logo-cream.svg"
+import logo from "../../../public/logo-new-cream.png"
 import { useTranslations, useLocale } from "next-intl"
 import Newsletter from "../inputs/Newsletter"
 
@@ -28,6 +28,7 @@ const Footer = () => {
             src={logo}
             alt="Litvin Marzorati Legales logo"
             width={200}
+            className="h-[120.59px] w-[200px] object-contain object-left-top"
           ></Image>
           <div className="max-w-xs">
             <h2 className={labelClass}>{t("newsletter")}</h2>
