@@ -27,6 +27,7 @@ export default function Home() {
       />
       <Hero
         locale={locale}
+        title={locale === "es" ? tHero("title") : undefined}
         head1={tHero("head1")}
         head2={tHero("head2")}
         type1={tHero("type1")}
