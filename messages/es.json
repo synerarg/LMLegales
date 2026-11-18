@@ -6,6 +6,7 @@
     "contacto": "Contacto"
   },
   "Hero": {
+    "title": "Asesoramiento legal a la altura de tu negocio.",
     "head1": "Asesorate con expertos,",
     "head2": "le damos valor a tus",
     "type1": "ideas.",
@@ -19,7 +20,7 @@
     "fact3": "Consulta sin cargo",
     "cta1": "Registra tu marca",
     "cta2": "Consultá disponibilidad gratis",
-    "description": "Estudio boutique de propiedad intelectual. Registramos, protegemos y defendemos marcas, patentes, software y derechos de autor, en Argentina y en el exterior."
+    "description": "Estudio especializado en propiedad intelectual y tecnología. Registramos, protegemos y defendemos marcas, patentes, software y derechos de autor en Argentina y en el mundo."
   },
   "Awards": {
     "label": "Reconocimientos"

@@ -8,6 +8,7 @@ import CtaButton from "@/components/inputs/Button"
 import { TypeAnimation } from "react-type-animation"
 
 interface Props {
+  title?: string
   head1: string
   head2: string
   type1: string
@@ -26,6 +27,7 @@ interface Props {
 }
 
 const Hero = ({
+  title,
   head1,
   head2,
   type1,
@@ -53,6 +55,10 @@ const Hero = ({
       <div className="main-padding pt-40 sm:pt-56 pb-28 lg:pb-10 flex-1 flex flex-col">
         <div className="flex flex-col items-start justify-start">
           <div className="font-meshedDisplay font-bold lg:text-[4rem] sm:text-[2.75rem] text-[2rem] leading-[1.1] text-left max-w-200">
+            {title ? (
+              <h1>{title}</h1>
+            ) : (
+              <>
             <h1 className="sm:whitespace-nowrap">{head1}</h1>
             <h1 className="sm:whitespace-nowrap">{head2}</h1>
             {/* El alto minimo evita que todo salte cuando la palabra animada se borra por completo. */}
@@ -78,6 +84,8 @@ const Hero = ({
               repeat={Infinity}
             />
             </span>
+              </>
+            )}
           </div>
           <p className="mt-7 sm:mt-9 max-w-[46rem] text-lg sm:text-[1.3rem] leading-normal text-fg-secondary">
             {description}
